@@ -7,7 +7,7 @@ import java.io.*;
 import java.util.ArrayList;
 import java.util.List;
 
-@Service
+Service
 public class PackageService {
 
     private static final String FILE_PATH = "packages.txt";
