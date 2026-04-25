@@ -29,7 +29,7 @@ public class PackageService {
 
     // READ
     public List<TravelPackage> getAllPackages() {
-        List>TravelPackage> list = new ArrayList<>();
+        List<TravelPackage> list = new ArrayList<>();
 
         try (BufferedReader reader = new BufferedReader(new FileReader(FILE_PATH))) {
             String line;
