@@ -8,7 +8,7 @@ import java.util.List;
 
 @RestController
 @RequestMapping("/packages")
-publi class PackageController {
+public class PackageController {
 
     private final PackageService service;
 
