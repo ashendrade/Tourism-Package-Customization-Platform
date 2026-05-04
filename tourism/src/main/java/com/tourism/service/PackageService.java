@@ -11,16 +11,17 @@ import java.util.List;
 @Service
 public class PackageService {
 
-    private static final String FILE_PATH = "packages.txt";
+    // Updated path to look inside the 'data' folder
+    private static final String FILE_PATH = "data/packages.txt";
 
-    
+
     public String createPackage(TravelPackage pkg) {
         try (BufferedWriter writer = new BufferedWriter(new FileWriter(FILE_PATH, true))) {
             writer.write(pkg.getId() + "," +
-                         pkg.getName() + "," +
-                         pkg.getDestination() + "," +
-                         pkg.getHotelType() + "," +
-                         pkg.getDuration());
+                    pkg.getName() + "," +
+                    pkg.getDestination() + "," +
+                    pkg.getHotelType() + "," +
+                    pkg.getDuration());
             writer.newLine();
         } catch (IOException e) {
             e.printStackTrace();
@@ -52,7 +53,7 @@ public class PackageService {
         return list;
     }
 
-    
+
     public String deletePackage(String id) {
         List<TravelPackage> list = getAllPackages();
 
@@ -60,10 +61,10 @@ public class PackageService {
             for (TravelPackage pkg : list) {
                 if (!pkg.getId().equals(id)) {
                     writer.write(pkg.getId() + "," +
-                                 pkg.getName() + "," +
-                                 pkg.getDestination() + "," +
-                                 pkg.getHotelType() + "," +
-                                 pkg.getDuration());
+                            pkg.getName() + "," +
+                            pkg.getDestination() + "," +
+                            pkg.getHotelType() + "," +
+                            pkg.getDuration());
                     writer.newLine();
                 }
             }
