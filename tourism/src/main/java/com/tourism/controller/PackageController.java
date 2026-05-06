@@ -9,7 +9,6 @@ import java.util.List;
 @RestController
 @RequestMapping("/packages")
 public class PackageController {
-    //test
 
     private final PackageService service;
 
