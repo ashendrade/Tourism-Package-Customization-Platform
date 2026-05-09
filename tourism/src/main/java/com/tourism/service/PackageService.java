@@ -14,8 +14,23 @@ public class PackageService {
     // Updated path to look inside the 'data' folder
     private static final String FILE_PATH = "data/packages.txt";
 
+    private void ensureFileExists() {
+        File file = new File(FILE_PATH);
+        File parentDir = file.getParentFile();
+        if (parentDir != null && !parentDir.exists()) {
+            parentDir.mkdirs();
+        }
+        if (!file.exists()) {
+            try {
+                file.createNewFile();
+            } catch (IOException e) {
+                e.printStackTrace();
+            }
+        }
+    }
 
     public String createPackage(TravelPackage pkg) {
+        ensureFileExists();
         try (BufferedWriter writer = new BufferedWriter(new FileWriter(FILE_PATH, true))) {
             writer.write(pkg.getId() + "," +
                     pkg.getName() + "," +
@@ -31,19 +46,26 @@ public class PackageService {
 
     // READ
     public List<TravelPackage> getAllPackages() {
+        ensureFileExists();
         List<TravelPackage> list = new ArrayList<>();
 
         try (BufferedReader reader = new BufferedReader(new FileReader(FILE_PATH))) {
             String line;
 
             while ((line = reader.readLine()) != null) {
+                if (line.trim().isEmpty()) continue;
+                
                 String[] data = line.split(",");
+                if (data.length < 5) continue;
 
-                TravelPackage pkg = new TravelPackage(
-                        data[0], data[1], data[2], data[3], Integer.parseInt(data[4])
-                );
-
-                list.add(pkg);
+                try {
+                    TravelPackage pkg = new TravelPackage(
+                            data[0], data[1], data[2], data[3], Integer.parseInt(data[4].trim())
+                    );
+                    list.add(pkg);
+                } catch (NumberFormatException e) {
+                    System.err.println("Error parsing duration for line: " + line);
+                }
             }
 
         } catch (IOException e) {

@@ -12,6 +12,7 @@ public class Payment {
     private double amount;
     private String status;
     private String method;
+
     private String bookingId;
 
     // Helper for serialization

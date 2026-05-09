@@ -18,6 +18,12 @@ async function loadPackages() {
 
 function renderPackages(packages) {
     const container = document.getElementById('package-list');
+    if (!packages || packages.length === 0) {
+        container.innerHTML = '<p class="no-data">No packages available at the moment. Please check if the data/packages.txt file is correctly populated on the server.</p>';
+        console.warn('No packages received from the server.');
+        return;
+    }
+    console.log(`Rendering ${packages.length} packages.`);
     container.innerHTML = packages.map(pkg => `
         <div class="card">
             <h3>${pkg.name}</h3>
