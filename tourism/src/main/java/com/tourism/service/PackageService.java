@@ -9,7 +9,9 @@ import java.util.ArrayList;
 import java.util.List;
 
 @Service
-public class PackageService {
+public class
+
+PackageService {
 
     // Updated path to look inside the 'data' folder
     private static final String FILE_PATH = "data/packages.txt";
