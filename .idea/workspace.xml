@@ -4,7 +4,17 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
+<<<<<<< HEAD
     <list default="true" id="01f5e971-f1b3-4130-b055-5d06be971329" name="Changes" comment="" />
+=======
+    <list default="true" id="01f5e971-f1b3-4130-b055-5d06be971329" name="Changes" comment="">
+<<<<<<< Updated upstream
+=======
+      <change beforePath="$PROJECT_DIR$/.idea/compiler.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/compiler.xml" afterDir="false" />
+>>>>>>> Stashed changes
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+    </list>
+>>>>>>> main
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -36,7 +46,7 @@
     &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
     &quot;RunOnceActivity.git.unshallow&quot;: &quot;true&quot;,
     &quot;RunOnceActivity.typescript.service.memoryLimit.init&quot;: &quot;true&quot;,
-    &quot;git-widget-placeholder&quot;: &quot;main&quot;,
+    &quot;git-widget-placeholder&quot;: &quot;pricingBudgetCalculation&quot;,
     &quot;kotlin-language-version-configured&quot;: &quot;true&quot;,
     &quot;last_opened_file_path&quot;: &quot;/Users/ashendra/Desktop/SLIIT/YEAR 1/SEMESTER 2/SE1020 - OOP/Project/sourceCode/Tourism-Package-Customization-Platformj/src/main/java/com/tourism/repository&quot;,
     &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
@@ -50,6 +60,15 @@
       <recent name="$PROJECT_DIR$/target/generated-sources" />
       <recent name="$PROJECT_DIR$/target/generated-sources/annotations" />
     </key>
+  </component>
+  <component name="RunManager">
+    <configuration name="TourismApplication" type="SpringBootApplicationConfigurationType" factoryName="Spring Boot" nameIsGenerated="true">
+      <module name="Tourism-Package-Customization-Platformj" />
+      <option name="SPRING_BOOT_MAIN_CLASS" value="com.tourism.TourismApplication" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
   </component>
   <component name="SharedIndexes">
     <attachedChunks>
@@ -68,7 +87,17 @@
       <updated>1774671597599</updated>
       <workItem from="1774671598816" duration="1136000" />
       <workItem from="1774743691431" duration="20000" />
+<<<<<<< HEAD
       <workItem from="1776965811121" duration="69000" />
+=======
+<<<<<<< Updated upstream
+=======
+      <workItem from="1776965811121" duration="69000" />
+      <workItem from="1777807972166" duration="1850000" />
+      <workItem from="1778057754313" duration="4000" />
+      <workItem from="1778659216723" duration="1305000" />
+>>>>>>> Stashed changes
+>>>>>>> main
     </task>
     <servers />
   </component>
