@@ -98,4 +98,34 @@ PackageService {
 
         return "Package deleted";
     }
+
+    public String updatePackage(TravelPackage updatedPkg) {
+        List<TravelPackage> list = getAllPackages();
+        boolean found = false;
+
+        try (BufferedWriter writer = new BufferedWriter(new FileWriter(FILE_PATH))) {
+            for (TravelPackage pkg : list) {
+                if (pkg.getId().equals(updatedPkg.getId())) {
+                    writer.write(updatedPkg.getId() + "," +
+                            updatedPkg.getName() + "," +
+                            updatedPkg.getDestination() + "," +
+                            updatedPkg.getHotelType() + "," +
+                            updatedPkg.getDuration());
+                    found = true;
+                } else {
+                    writer.write(pkg.getId() + "," +
+                            pkg.getName() + "," +
+                            pkg.getDestination() + "," +
+                            pkg.getHotelType() + "," +
+                            pkg.getDuration());
+                }
+                writer.newLine();
+            }
+        } catch (IOException e) {
+            e.printStackTrace();
+            return "Error updating package";
+        }
+
+        return found ? "Package updated" : "Package not found";
+    }
 }

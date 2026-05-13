@@ -30,9 +30,131 @@ function renderPackages(packages) {
             <p><strong>Destination:</strong> ${pkg.destination}</p>
             <p><strong>Hotel:</strong> ${pkg.hotelType}</p>
             <p><strong>Duration:</strong> ${pkg.duration} Days</p>
-            <button class="btn-primary" onclick="openBookingModal('${pkg.id}', '${pkg.name}')">Book Now</button>
+            <div style="display: flex; gap: 5px; margin-bottom: 10px;">
+                <button class="btn-primary" onclick="openBookingModal('${pkg.id}', '${pkg.name}')">Book Now</button>
+            </div>
+            <div style="display: flex; gap: 5px;">
+                <button class="btn-secondary" onclick="openUpdatePackageModal('${pkg.id}')">Update</button>
+                <button class="btn-danger" onclick="deletePackage('${pkg.id}')">Delete</button>
+            </div>
         </div>
     `).join('');
+}
+
+async function deletePackage(id) {
+    if (!confirm('Are you sure you want to delete this package?')) return;
+    try {
+        const response = await fetch(`${API_BASE}/packages/${id}`, { method: 'DELETE' });
+        if (response.ok) {
+            alert('Package deleted');
+            loadPackages();
+        }
+    } catch (error) {
+        console.error('Error deleting package:', error);
+    }
+}
+
+async function loadBookings() {
+    try {
+        const response = await fetch(`${API_BASE}/bookings/user/${MOCK_USER_ID}`);
+        const bookings = await response.json();
+        renderBookings(bookings);
+    } catch (error) {
+        console.error('Error loading bookings:', error);
+    }
+}
+
+function renderBookings(bookings) {
+    const container = document.getElementById('booking-list');
+    if (!bookings || bookings.length === 0) {
+        container.innerHTML = '<p>No bookings found.</p>';
+        return;
+    }
+    container.innerHTML = bookings.map(b => `
+        <div class="list-item">
+            <div>
+                <h4>Booking ID: ${b.id}</h4>
+                <p>Package ID: ${b.packageId} | Date: ${b.bookingDate}</p>
+                <span class="status status-${b.status.toLowerCase()}">${b.status}</span>
+            </div>
+            <div>
+                ${b.status !== 'CANCELLED' ? `<button class="btn-secondary" onclick="cancelBooking('${b.id}')">Cancel</button>` : ''}
+                <button class="btn-danger" onclick="deleteBooking('${b.id}')">Delete</button>
+            </div>
+        </div>
+    `).join('');
+}
+
+async function cancelBooking(id) {
+    try {
+        const response = await fetch(`${API_BASE}/bookings/${id}/cancel`, { method: 'PUT' });
+        if (response.ok) {
+            alert('Booking cancelled');
+            loadBookings();
+        }
+    } catch (error) {
+        console.error('Error cancelling booking:', error);
+    }
+}
+
+async function deleteBooking(id) {
+    if (!confirm('Are you sure you want to permanently delete this booking record?')) return;
+    try {
+        const response = await fetch(`${API_BASE}/bookings/${id}`, { method: 'DELETE' });
+        if (response.ok) {
+            alert('Booking record deleted');
+            loadBookings();
+        }
+    } catch (error) {
+        console.error('Error deleting booking:', error);
+    }
+}
+
+async function openUpdatePackageModal(id) {
+    // For simplicity, we'll fetch all and find the one. Ideally we have a GET /packages/{id}
+    const response = await fetch(`${API_BASE}/packages`);
+    const packages = await response.json();
+    const pkg = packages.find(p => p.id === id);
+    
+    if (!pkg) return;
+
+    document.getElementById('update-package-id').value = pkg.id;
+    document.getElementById('update-package-name').value = pkg.name;
+    document.getElementById('update-package-destination').value = pkg.destination;
+    document.getElementById('update-package-hotel').value = pkg.hotelType;
+    document.getElementById('update-package-duration').value = pkg.duration;
+    
+    document.getElementById('update-modal').style.display = 'block';
+}
+
+function closeUpdateModal() {
+    document.getElementById('update-modal').style.display = 'none';
+}
+
+async function updatePackage() {
+    const id = document.getElementById('update-package-id').value;
+    const pkgData = {
+        name: document.getElementById('update-package-name').value,
+        destination: document.getElementById('update-package-destination').value,
+        hotelType: document.getElementById('update-package-hotel').value,
+        duration: parseInt(document.getElementById('update-package-duration').value)
+    };
+
+    try {
+        const response = await fetch(`${API_BASE}/packages/${id}`, {
+            method: 'PUT',
+            headers: { 'Content-Type': 'application/json' },
+            body: JSON.stringify(pkgData)
+        });
+
+        if (response.ok) {
+            alert('Package updated successfully');
+            closeUpdateModal();
+            loadPackages();
+        }
+    } catch (error) {
+        console.error('Error updating package:', error);
+    }
 }
 
 function showSection(sectionId) {

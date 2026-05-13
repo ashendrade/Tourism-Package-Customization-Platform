@@ -56,4 +56,27 @@ public class BookingService {
                 .findFirst()
                 .orElse(null);
     }
+
+    public boolean deleteBooking(String bookingId) throws IOException {
+        List<Booking> allBookings = FileHandler.readLines(FILE_PATH).stream()
+                .map(Booking::fromTextLine)
+                .collect(Collectors.toList());
+
+        boolean found = false;
+        List<String> updatedLines = new ArrayList<>();
+        for (Booking b : allBookings) {
+            if (b != null) {
+                if (b.getId().equals(bookingId)) {
+                    found = true;
+                    continue; // Skip this booking to delete it
+                }
+                updatedLines.add(b.toTextLine());
+            }
+        }
+
+        if (found) {
+            FileHandler.writeLines(FILE_PATH, updatedLines);
+        }
+        return found;
+    }
 }

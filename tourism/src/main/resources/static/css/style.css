@@ -103,6 +103,36 @@ h1 {
     background-color: #21867a;
 }
 
+.btn-secondary {
+    background-color: var(--secondary);
+    color: white;
+    border: none;
+    padding: 0.8rem 1.5rem;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 1rem;
+    width: 100%;
+}
+
+.btn-secondary:hover {
+    background-color: #1a313a;
+}
+
+.btn-danger {
+    background-color: var(--accent);
+    color: white;
+    border: none;
+    padding: 0.8rem 1.5rem;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 1rem;
+    width: 100%;
+}
+
+.btn-danger:hover {
+    background-color: #c95d41;
+}
+
 .list-container {
     display: flex;
     flex-direction: column;
@@ -158,4 +188,23 @@ h1 {
     top: 1rem;
     font-size: 1.5rem;
     cursor: pointer;
+}
+
+/* Form Styles */
+.form-group {
+    margin-bottom: 1rem;
+}
+
+.form-group label {
+    display: block;
+    margin-bottom: 0.5rem;
+    font-weight: 600;
+}
+
+.form-group input {
+    width: 100%;
+    padding: 0.8rem;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    font-family: inherit;
 }

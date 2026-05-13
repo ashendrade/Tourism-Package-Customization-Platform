@@ -67,6 +67,32 @@
         </div>
     </div>
 
+    <!-- Update Package Modal -->
+    <div id="update-modal" class="modal">
+        <div class="modal-content">
+            <span class="close" onclick="closeUpdateModal()">&times;</span>
+            <h2>Update Package</h2>
+            <input type="hidden" id="update-package-id">
+            <div class="form-group">
+                <label for="update-package-name">Package Name</label>
+                <input type="text" id="update-package-name">
+            </div>
+            <div class="form-group">
+                <label for="update-package-destination">Destination</label>
+                <input type="text" id="update-package-destination">
+            </div>
+            <div class="form-group">
+                <label for="update-package-hotel">Hotel Type</label>
+                <input type="text" id="update-package-hotel">
+            </div>
+            <div class="form-group">
+                <label for="update-package-duration">Duration (Days)</label>
+                <input type="number" id="update-package-duration">
+            </div>
+            <button onclick="updatePackage()" class="btn-primary">Update Package</button>
+        </div>
+    </div>
+
     <script src="js/app.js"></script>
 </body>
 </html>

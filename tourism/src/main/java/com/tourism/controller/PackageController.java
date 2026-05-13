@@ -31,4 +31,10 @@ public class PackageController {
     public String delete(@PathVariable String id) {
         return service.deletePackage(id);
     }
+
+    @PutMapping("/{id}")
+    public String update(@PathVariable String id, @RequestBody TravelPackage pkg) {
+        pkg.setId(id); // Ensure the ID from path is used
+        return service.updatePackage(pkg);
+    }
 }
