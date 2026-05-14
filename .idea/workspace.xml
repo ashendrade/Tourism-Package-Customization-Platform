@@ -6,34 +6,33 @@
   <component name="ChangeListManager">
     <list default="true" id="01f5e971-f1b3-4130-b055-5d06be971329" name="Changes" comment="Banujan">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/tourism/controller/BookingController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/tourism/controller/BookingController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/tourism/controller/BookingWebController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/tourism/controller/BookingWebController.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/tourism/controller/BudgetController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/tourism/controller/BudgetController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/tourism/controller/ContactController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/tourism/controller/ContactController.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/tourism/controller/ReviewController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/tourism/controller/ReviewController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/tourism/model/Booking.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/tourism/model/Booking.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/tourism/model/Budget.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/tourism/model/Budget.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/tourism/model/Destination.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/tourism/model/Destination.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/tourism/model/ForeignDestination.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/tourism/model/ForeignDestination.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/tourism/model/LocalDestination.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/tourism/model/LocalDestination.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/tourism/controller/TravelPackageController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/tourism/controller/TravelPackageController.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/tourism/model/Review.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/tourism/model/Review.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/tourism/model/TravelPackage.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/tourism/model/TravelPackage.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/tourism/repository/BudgetRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/tourism/repository/BudgetRepository.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/tourism/repository/PackageRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/tourism/repository/PackageRepository.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/tourism/repository/UserRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/tourism/repository/UserRepository.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/tourism/service/BookingService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/tourism/service/BookingService.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/tourism/service/PackageService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/tourism/service/PackageService.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/tourism/service/UserService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/tourism/service/UserService.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/tourism/util/DestinationFileHandler.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/tourism/util/DestinationFileHandler.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/data/destinations.txt" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/data/destinations.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/data/bookings.txt" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/data/bookings.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/data/packages.txt" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/data/packages.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/data/quotes.txt" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/data/quotes.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/data/reviews.txt" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/data/reviews.txt" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/resources/data/users.txt" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/data/users.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/WEB-INF/jsp/bookings.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/WEB-INF/jsp/bookings.jsp" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/webapp/WEB-INF/jsp/budget_view.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/WEB-INF/jsp/budget_view.jsp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/WEB-INF/jsp/contact.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/WEB-INF/jsp/contact.jsp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/WEB-INF/jsp/customize.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/WEB-INF/jsp/customize.jsp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/WEB-INF/jsp/footer.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/WEB-INF/jsp/footer.jsp" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/webapp/WEB-INF/jsp/home.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/WEB-INF/jsp/home.jsp" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/webapp/WEB-INF/jsp/list.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/WEB-INF/jsp/list.jsp" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/webapp/WEB-INF/jsp/login.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/WEB-INF/jsp/login.jsp" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/webapp/WEB-INF/jsp/navbar.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/WEB-INF/jsp/navbar.jsp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/WEB-INF/jsp/packages.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/WEB-INF/jsp/packages.jsp" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/webapp/WEB-INF/jsp/register.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/WEB-INF/jsp/register.jsp" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/webapp/WEB-INF/jsp/reviews.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/WEB-INF/jsp/reviews.jsp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/webapp/css/style.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/css/style.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/updates.md" beforeDir="false" afterPath="$PROJECT_DIR$/updates.md" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/updates.md" beforeDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -125,7 +124,7 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1774671597599</updated>
-      <workItem from="1778755959889" duration="5150000" />
+      <workItem from="1778755959889" duration="8500000" />
     </task>
     <servers />
   </component>

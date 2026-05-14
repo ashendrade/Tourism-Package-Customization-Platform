@@ -5,18 +5,19 @@ public class TravelPackage {
     private String id;
     private String name;
     private String destination;
-    private String hotelType; // This was here, might map to hotelTier
+    private String hotelType;
     private int duration;
+    private String userId; // Added to track which user created the package
     
     // New fields from updates.md
-    private String activities; // Semicolon separated list
+    private String activities;
     private String specialRequest;
-    private String hotelTier; // Budget, Standard, Luxury
+    private String hotelTier;
 
     public TravelPackage() {}
 
     public TravelPackage(String id, String name, String destination, String hotelType, int duration,
-                        String activities, String specialRequest, String hotelTier) {
+                        String activities, String specialRequest, String hotelTier, String userId) {
         this.id = id;
         this.name = name;
         this.destination = destination;
@@ -25,11 +26,12 @@ public class TravelPackage {
         this.activities = activities;
         this.specialRequest = specialRequest;
         this.hotelTier = hotelTier;
+        this.userId = userId;
     }
 
-    // Backward Compatibility Constructor (5 fields)
+    // Backward Compatibility Constructor
     public TravelPackage(String id, String name, String destination, String hotelType, int duration) {
-        this(id, name, destination, hotelType, duration, "City Tour", "None", hotelType);
+        this(id, name, destination, hotelType, duration, "City Tour", "None", hotelType, "admin");
     }
 
     public String getId() { return id; }
@@ -55,4 +57,7 @@ public class TravelPackage {
 
     public String getHotelTier() { return hotelTier; }
     public void setHotelTier(String hotelTier) { this.hotelTier = hotelTier; }
+
+    public String getUserId() { return userId; }
+    public void setUserId(String userId) { this.userId = userId; }
 }

@@ -1,3 +1,6 @@
-PKG33123,null,Tropical Paradise,null,5,Standard Tour,,Standard
-PKG59632,null,Historic Sands,null,5,Standard Tour,,Standard
-PKG231041,null,Tropical Paradise,null,5,Standard Tour,,Standard
+PKG33123,Custom Paradise Tour,Tropical Paradise,Standard,5,Standard Tour,,Standard
+PKG59632,Custom Sands Tour,Historic Sands,Standard,5,Standard Tour,,Standard
+PKG231041,Custom Paradise Tour,Tropical Paradise,Standard,5,Standard Tour,,Standard
+PKG871826,Custom Safari Wonders Tour,Safari Wonders,Standard,5,,,Standard,ashendra
+PKG403436,Custom Tropical Paradise Tour,Tropical Paradise,Standard,5,,,Standard,Ashendra
+PKG993835,Custom Tropical Paradise Tour,Tropical Paradise,Standard,5,City Walking Tour; Adventure Trekking,,Standard,Ashendra

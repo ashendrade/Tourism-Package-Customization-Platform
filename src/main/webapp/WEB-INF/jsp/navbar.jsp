@@ -9,10 +9,16 @@
             <ul class="nav-links">
                 <li><a href="${pageContext.request.contextPath}/">Home</a></li>
                 <li><a href="${pageContext.request.contextPath}/destinations">Destinations</a></li>
-                <li><a href="${pageContext.request.contextPath}/packages">Packages</a></li>
-                <li><a href="${pageContext.request.contextPath}/budget">Budget</a></li>
-                <li><a href="${pageContext.request.contextPath}/bookings">Bookings</a></li>
-                <li><a href="${pageContext.request.contextPath}/reviews">Reviews</a></li>
+                <c:if test="${sessionScope.user.role == 'ADMIN'}">
+                    <li><a href="${pageContext.request.contextPath}/admin/destinations">Manage Destinations</a></li>
+                    <li><a href="${pageContext.request.contextPath}/admin/bookings">All Bookings</a></li>
+                    <li><a href="${pageContext.request.contextPath}/budget">Finance</a></li>
+                </c:if>
+                <c:if test="${sessionScope.user.role == 'TRAVELER'}">
+                    <li><a href="${pageContext.request.contextPath}/packages">My Packages</a></li>
+                    <li><a href="${pageContext.request.contextPath}/bookings">My Bookings</a></li>
+                    <li><a href="${pageContext.request.contextPath}/reviews">Reviews</a></li>
+                </c:if>
                 <li><a href="${pageContext.request.contextPath}/contact">Contact</a></li>
             </ul>
             <div class="auth-links">

@@ -5,7 +5,8 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Traveler Reviews - Tourism Platform</title>
+    <title>Traveler Reviews - OCEANWAVE</title>
+    <link rel="icon" type="image/jpg" href="/img/logo.jpg">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
     <style>
@@ -13,7 +14,6 @@
             font-family: 'Poppins', sans-serif;
             background: #F8FAFC;
             color: #1E293B;
-            padding-bottom: 50px;
         }
 
         .page-header {
@@ -94,12 +94,27 @@
         <div class="col-md-5">
             <div class="content-card mb-4">
                 <h4>Share Your Experience</h4>
+                <c:if test="${not empty error}">
+                    <div class="alert alert-danger border-0 shadow-sm mb-3" style="border-radius: 8px; font-size: 0.85rem;">
+                        <i class="fas fa-exclamation-circle me-2"></i> ${error}
+                    </div>
+                </c:if>
+                <c:if test="${param.success == 'true'}">
+                    <div class="alert alert-success border-0 shadow-sm mb-3" style="border-radius: 8px; font-size: 0.85rem; background: #D1FAE5; color: #065F46;">
+                        <i class="fas fa-check-circle me-2"></i> Review posted successfully!
+                    </div>
+                </c:if>
                 <c:choose>
                     <c:when test="${not empty sessionScope.user}">
                         <form action="/reviews/add" method="POST" class="mt-4">
                             <div class="mb-3">
-                                <label class="form-label">Destination ID</label>
-                                <input type="text" name="packageId" class="form-control" placeholder="e.g. DEST123" required>
+                                <label class="form-label">Select Destination</label>
+                                <select name="packageId" class="form-select" required>
+                                    <option value="">-- Choose a location --</option>
+                                    <c:forEach var="dest" items="${destinations}">
+                                        <option value="${dest.destinationId}">${dest.destinationName}</option>
+                                    </c:forEach>
+                                </select>
                             </div>
                             
                             <div class="row mb-3">

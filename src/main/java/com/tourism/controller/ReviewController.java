@@ -26,6 +26,7 @@ public class ReviewController {
     @GetMapping({"/reviews", "/reviews/", "/reviews/list"})
     public String viewReviews(Model model) throws IOException {
         model.addAttribute("reviews", reviewService.getAllReviews());
+        model.addAttribute("destinations", destinationService.viewAllDestinations());
         return "reviews";
     }
 
@@ -44,8 +45,9 @@ public class ReviewController {
         if (user == null) return "redirect:/login";
 
         if (destinationService.getDestinationById(packageId) == null) {
-            model.addAttribute("error", "Invalid Destination ID. Please review a valid destination.");
+            model.addAttribute("error", "Invalid Destination. Please select from the list.");
             model.addAttribute("reviews", reviewService.getAllReviews());
+            model.addAttribute("destinations", destinationService.viewAllDestinations());
             return "reviews";
         }
 
@@ -61,6 +63,6 @@ public class ReviewController {
         review.setVideoUrl(videoUrl);
 
         reviewService.addReview(review);
-        return "redirect:/reviews";
+        return "redirect:/reviews?success=true";
     }
 }

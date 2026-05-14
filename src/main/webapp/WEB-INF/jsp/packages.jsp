@@ -6,14 +6,14 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Travel Packages - Tourism Platform</title>
+    <title>My Customized Packages - OCEANWAVE</title>
+    <link rel="icon" type="image/jpg" href="/img/logo.jpg">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
     <style>
         body {
             background: #F8FAFC;
             color: #1E293B;
-            padding-bottom: 50px;
         }
 
         .page-header {
@@ -89,7 +89,7 @@
                     </div>
                     <div class="d-flex justify-content-between align-items-center">
                         <small class="text-muted">ID: ${pkg.id}</small>
-                        <a href="${pageContext.request.contextPath}/customize?destinationId=${pkg.destination}" class="btn-modify">Modify</a>
+                        <a href="${pageContext.request.contextPath}/packages/customize?destinationId=${pkg.destination}" class="btn-modify">Modify</a>
                     </div>
                 </div>
             </div>

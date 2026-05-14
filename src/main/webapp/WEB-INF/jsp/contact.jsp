@@ -5,7 +5,8 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Contact Us - Tourism Platform</title>
+    <title>Contact Us - OCEANWAVE</title>
+    <link rel="icon" type="image/jpg" href="/img/logo.jpg">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
     <style>
@@ -162,23 +163,28 @@
 
     <div class="contact-form">
         <h3>Send a Message</h3>
-        <form action="#" class="mt-4">
+        <c:if test="${param.success == 'true'}">
+            <div class="alert alert-success border-0 shadow-sm mb-4" style="border-radius: 10px; background: #D1FAE5; color: #065F46;">
+                <i class="fas fa-check-circle me-2"></i> Thank you! Your message has been sent.
+            </div>
+        </c:if>
+        <form action="/contact/submit" method="POST" class="mt-4">
             <div class="row g-3">
                 <div class="col-md-6">
                     <label class="form-label">Full Name</label>
-                    <input type="text" class="form-control" placeholder="John Doe">
+                    <input type="text" name="name" class="form-control" placeholder="John Doe" required>
                 </div>
                 <div class="col-md-6">
                     <label class="form-label">Email Address</label>
-                    <input type="email" class="form-control" placeholder="john@example.com">
+                    <input type="email" name="email" class="form-control" placeholder="john@example.com" required>
                 </div>
                 <div class="col-12">
                     <label class="form-label">Subject</label>
-                    <input type="text" class="form-control" placeholder="Inquiry about Packages">
+                    <input type="text" name="subject" class="form-control" placeholder="Inquiry about Packages">
                 </div>
                 <div class="col-12">
                     <label class="form-label">Message</label>
-                    <textarea class="form-control" rows="6" placeholder="Your message here..."></textarea>
+                    <textarea name="message" class="form-control" rows="6" placeholder="Your message here..." required></textarea>
                 </div>
                 <div class="col-12">
                     <button type="submit" class="btn btn-primary w-100">Send Message</button>

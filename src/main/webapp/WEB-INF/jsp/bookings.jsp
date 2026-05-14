@@ -7,6 +7,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>My Bookings - Tourism Platform</title>
+    <link rel="icon" type="image/jpg" href="/img/logo.jpg">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
     <style>
@@ -14,7 +15,6 @@
             font-family: 'Poppins', sans-serif;
             background: #F8FAFC;
             color: #1E293B;
-            padding-bottom: 50px;
         }
 
         .page-header {
@@ -85,6 +85,11 @@
 </div>
 
 <div class="container">
+    <c:if test="${param.success == 'true'}">
+        <div class="alert alert-success border-0 shadow-sm mb-4 py-3" style="border-radius: 12px; background: #D1FAE5; color: #065F46;">
+            <i class="fas fa-check-circle me-2"></i> Payment successful! Your booking has been confirmed.
+        </div>
+    </c:if>
     <div class="booking-list">
         <c:forEach var="booking" items="${bookings}">
             <div class="booking-card">
@@ -106,7 +111,14 @@
                 </div>
                 <div class="text-end">
                     <div class="price-text">Rs. <fmt:formatNumber value="${booking.price}" pattern="#,##0.00"/></div>
-                    <div class="small text-muted">Total Paid</div>
+                    <c:choose>
+                        <c:when test="${booking.status == 'PENDING'}">
+                            <a href="${pageContext.request.contextPath}/bookings/pay?bookingId=${booking.id}" class="btn btn-sm btn-primary mt-2 px-4 py-2 fw-bold" style="background:#278282; border:none; border-radius:8px;">Pay Now</a>
+                        </c:when>
+                        <c:otherwise>
+                            <div class="small text-muted mt-1">Payment Completed</div>
+                        </c:otherwise>
+                    </c:choose>
                 </div>
             </div>
         </c:forEach>

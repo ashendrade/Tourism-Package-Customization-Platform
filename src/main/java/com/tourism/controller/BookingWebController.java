@@ -28,4 +28,27 @@ public class BookingWebController {
         model.addAttribute("bookings", bookings);
         return "bookings";
     }
+
+    @GetMapping("/bookings/pay")
+    public String showPaymentPage(@org.springframework.web.bind.annotation.RequestParam String bookingId, HttpSession session, Model model) throws IOException {
+        User user = (User) session.getAttribute("user");
+        if (user == null) return "redirect:/login";
+
+        Booking booking = bookingService.getBookingById(bookingId);
+        if (booking == null || !booking.getUserId().equals(user.getUsername())) {
+            return "redirect:/bookings";
+        }
+
+        model.addAttribute("booking", booking);
+        return "payment";
+    }
+
+    @org.springframework.web.bind.annotation.PostMapping("/bookings/confirm-payment")
+    public String confirmPayment(@org.springframework.web.bind.annotation.RequestParam String bookingId, HttpSession session) throws IOException {
+        User user = (User) session.getAttribute("user");
+        if (user == null) return "redirect:/login";
+
+        bookingService.confirmBooking(bookingId);
+        return "redirect:/bookings?success=true";
+    }
 }

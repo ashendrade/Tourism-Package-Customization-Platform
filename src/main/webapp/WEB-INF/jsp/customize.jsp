@@ -226,9 +226,12 @@
         <div class="customize-form-card">
             <h1 class="mb-4">Build Your Itinerary</h1>
             
-            <form id="customizeForm" action="/packages/customize" method="POST">
+            <form id="customizeForm" action="/packages/customize" method="POST" onsubmit="prepareData()">
                 <input type="hidden" id="basePrice" value="${destination.price}">
                 <input type="hidden" name="destination" value="${destination.destinationName}">
+                <input type="hidden" name="name" value="Custom ${destination.destinationName} Tour">
+                <input type="hidden" name="hotelType" id="hiddenHotelType" value="Standard">
+                <input type="hidden" name="activities" id="hiddenActivities" value="">
                 
                 <div class="grid-2">
                     <div class="form-group">
@@ -334,6 +337,17 @@
         document.getElementById('displayService').innerText = 'Rs. ' + service.toLocaleString();
         document.getElementById('displayTax').innerText = 'Rs. ' + tax.toLocaleString();
         document.getElementById('displayTotal').innerText = 'Rs. ' + total.toLocaleString();
+    }
+    
+    function prepareData() {
+        const tier = document.getElementById('hotelTier').value;
+        document.getElementById('hiddenHotelType').value = tier;
+        
+        const activities = [];
+        document.querySelectorAll('.activity:checked').forEach(a => {
+            activities.push(a.getAttribute('data-name'));
+        });
+        document.getElementById('hiddenActivities').value = activities.join('; ');
     }
     
     updatePrice();

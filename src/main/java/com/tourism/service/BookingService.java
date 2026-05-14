@@ -120,4 +120,11 @@ public class BookingService {
         }
         return found;
     }
+
+    public List<Booking> getAllBookings() throws IOException {
+        return FileHandler.readLines(FILE_PATH).stream()
+                .map(Booking::fromTextLine)
+                .filter(b -> b != null)
+                .collect(Collectors.toList());
+    }
 }

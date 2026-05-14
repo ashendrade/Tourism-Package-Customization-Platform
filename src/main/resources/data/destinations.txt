@@ -3,3 +3,4 @@ DEST002,Alpine Adventure,Switzerland,Interlaken,Adventure,250000.00,Explore the 
 DEST003,Safari Wonders,Kenya,Nairobi,Family,180000.00,An unforgettable family safari experience in the Maasai Mara.
 DEST004,City Lights,Japan,Tokyo,Luxury,220000.00,Experience the vibrant culture and high-tech lifestyle of Tokyo.
 DEST005,Historic Sands,Egypt,Cairo,Budget,120000.00,Visit the pyramids and uncover the ancient history of Egypt.
+DEST50C1A50B,Tour to the Fira,Greece,Fira,Adventure,100000.00,Fira (or Thira) is the vibrant capital of Santorini, perched on 1,312-foot (400-meter) high caldera cliffs, offering breathtaking Aegean sea views and intense nightlife. It is the island's central hub for shopping, dining, and transportation, featuring narrow whitewashed alleys, museums, and popular day trips like caldera boat tours,default.jpg,,Pleasant,Respect locals,Bus, Taxi,General

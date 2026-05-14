@@ -5,33 +5,47 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Login - Tourism Platform</title>
+    <title>Login - OCEANWAVE</title>
+    <link rel="icon" type="image/jpg" href="/img/logo.jpg">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
     <style>
         body {
-            background: #F8FAFC;
+            background: linear-gradient(rgba(0,0,0,0.4), rgba(0,0,0,0.4)), url('https://www.image2url.com/r2/default/images/1776767940648-fb7013a2-808d-4464-b265-db0c85273699.jpg');
+            background-size: cover;
+            background-position: center;
             height: 100vh;
             display: flex;
             align-items: center;
             justify-content: center;
+            font-family: 'Poppins', sans-serif;
         }
         .login-card {
-            background: white;
-            border: 1px solid #E2E8F0;
-            border-radius: 10px;
-            padding: 40px;
+            background: rgba(255, 255, 255, 0.9);
+            backdrop-filter: blur(10px);
+            border-radius: 20px;
+            padding: 50px;
             width: 100%;
-            max-width: 400px;
-            box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1);
+            max-width: 450px;
+            box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.5);
+        }
+        .form-control {
+            border-radius: 10px;
+            padding: 12px;
+            border: 1px solid #e2e8f0;
         }
         .btn-primary {
             background-color: #278282;
             border: none;
-            padding: 10px;
-            font-weight: 600;
+            padding: 12px;
+            font-weight: 700;
+            border-radius: 10px;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            transition: 0.3s;
         }
         .btn-primary:hover {
             background-color: #1f6b6b;
+            transform: translateY(-2px);
         }
     </style>
 </head>

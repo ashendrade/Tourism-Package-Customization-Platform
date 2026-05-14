@@ -30,19 +30,24 @@ public class PackageRepository {
             while ((line = reader.readLine()) != null) {
                 if (line.trim().isEmpty()) continue;
                 try {
-                    String[] data = line.split(",", 8);
-                    if (data.length == 8) {
+                    String[] data = line.split(",", 9);
+                    if (data.length == 9) {
                         list.add(new TravelPackage(
                             data[0], data[1], data[2], data[3], 
                             Integer.parseInt(data[4].trim()), 
-                            data[5], data[6], data[7]
+                            data[5], data[6], data[7], data[8]
+                        ));
+                    } else if (data.length == 8) {
+                        list.add(new TravelPackage(
+                            data[0], data[1], data[2], data[3], 
+                            Integer.parseInt(data[4].trim()), 
+                            data[5], data[6], data[7], "admin"
                         ));
                     } else if (data.length == 5) {
-                        // Backward compatibility
                         list.add(new TravelPackage(
                             data[0], data[1], data[2], data[3], 
                             Integer.parseInt(data[4].trim()),
-                            "Standard Tour", "", "Standard"
+                            "Standard Tour", "", "Standard", "admin"
                         ));
                     }
                 } catch (Exception e) {
@@ -67,7 +72,7 @@ public class PackageRepository {
     }
 
     private String formatPackage(TravelPackage pkg) {
-        return String.format("%s,%s,%s,%s,%d,%s,%s,%s",
+        return String.format("%s,%s,%s,%s,%d,%s,%s,%s,%s",
             pkg.getId(),
             pkg.getName(),
             pkg.getDestination(),
@@ -75,7 +80,8 @@ public class PackageRepository {
             pkg.getDuration(),
             pkg.getActivities() != null ? pkg.getActivities() : "Standard Tour",
             pkg.getSpecialRequest() != null ? pkg.getSpecialRequest() : "",
-            pkg.getHotelTier() != null ? pkg.getHotelTier() : "Standard"
+            pkg.getHotelTier() != null ? pkg.getHotelTier() : "Standard",
+            pkg.getUserId() != null ? pkg.getUserId() : "admin"
         );
     }
 }

@@ -1,7 +1,7 @@
 <footer class="footer">
     <div class="footer-grid">
         <div>
-            <h3>About us</h3>
+            <h3>About Us</h3>
             <p>Every journey begins with a single step, let us guide yours.</p>
         </div>
         <div>
@@ -19,10 +19,10 @@
             <a href="/contact">Contact</a>
         </div>
         <div>
-            <h3>Follow us</h3>
-            <a href="#">facebook</a>
-            <a href="#">instagram</a>
-            <a href="#">twitter</a>
+            <h3>Follow Us</h3>
+            <a href="#">Facebook</a>
+            <a href="#">Instagram</a>
+            <a href="#">Twitter</a>
         </div>
     </div>
     <div class="copyright">
@@ -48,7 +48,6 @@
     .footer h3 {
         font-size: 1.2rem;
         margin-bottom: 25px;
-        text-transform: lowercase;
     }
 
     .footer p,

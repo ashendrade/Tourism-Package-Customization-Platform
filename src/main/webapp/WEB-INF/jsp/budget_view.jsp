@@ -14,7 +14,6 @@
             font-family: 'Poppins', sans-serif;
             background: #F8FAFC;
             color: #1E293B;
-            padding-bottom: 50px;
         }
 
         .page-header {

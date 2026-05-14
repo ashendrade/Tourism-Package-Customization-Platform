@@ -37,14 +37,31 @@ public class Review {
                                  parts[5], parts[6], Integer.parseInt(parts[7]), 
                                  Integer.parseInt(parts[8]), Integer.parseInt(parts[9]));
             } else if (parts.length == 5) {
-                // Backward compatibility
-                return new Review(parts[0], parts[1], parts[2], Integer.parseInt(parts[3]), parts[4],
-                                 "", "", Integer.parseInt(parts[3]), 
-                                 Integer.parseInt(parts[3]), Integer.parseInt(parts[3]));
+                // Check if parts[3] is numeric (standard: id|userId|pkg|rating|comment)
+                // or if parts[2] is numeric (legacy: userId|pkg|rating|comment|id)
+                if (isNumeric(parts[3])) {
+                    return new Review(parts[0], parts[1], parts[2], Integer.parseInt(parts[3]), parts[4],
+                                     "", "", Integer.parseInt(parts[3]), 
+                                     Integer.parseInt(parts[3]), Integer.parseInt(parts[3]));
+                } else if (isNumeric(parts[2])) {
+                    return new Review(parts[4], parts[0], parts[1], Integer.parseInt(parts[2]), parts[3],
+                                     "", "", Integer.parseInt(parts[2]), 
+                                     Integer.parseInt(parts[2]), Integer.parseInt(parts[2]));
+                }
             }
         } catch (Exception e) {
             System.err.println("Error parsing review line: " + line);
         }
         return null;
+    }
+
+    private static boolean isNumeric(String str) {
+        if (str == null || str.isEmpty()) return false;
+        try {
+            Integer.parseInt(str.trim());
+            return true;
+        } catch (NumberFormatException e) {
+            return false;
+        }
     }
 }

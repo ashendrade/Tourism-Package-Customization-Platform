@@ -7,6 +7,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Tourism Platform - Discover The World</title>
+    <link rel="icon" type="image/jpg" href="/img/logo.jpg">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" />
     <style>
         @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&display=swap');
@@ -126,6 +127,132 @@
             font-size: 0.8rem;
             color: #278282;
         }
+        .about-section {
+            padding: 100px 20px;
+            background: #fdfdfd;
+        }
+
+        .container-wide {
+            max-width: 1200px;
+            margin: 0 auto;
+            display: flex;
+            align-items: center;
+            gap: 60px;
+        }
+
+        .about-image {
+            flex: 1;
+            position: relative;
+        }
+
+        .about-image img {
+            width: 100%;
+            border-radius: 20px;
+            box-shadow: 20px 20px 0px #278282;
+        }
+
+        .about-content {
+            flex: 1;
+            text-align: left;
+        }
+
+        .about-content p {
+            color: #666;
+            line-height: 1.8;
+            margin-bottom: 30px;
+        }
+
+        .stats-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 20px;
+            margin-top: 40px;
+        }
+
+        .stat-item h3 {
+            font-size: 2rem;
+            color: #278282;
+            margin-bottom: 5px;
+        }
+
+        .stat-item p {
+            font-size: 0.85rem;
+            margin: 0;
+            color: #888;
+        }
+
+        .features-section {
+            padding: 80px 20px;
+            background: #fff;
+            text-align: center;
+        }
+
+        .features-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 30px;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        .feature-card {
+            padding: 40px;
+            border-radius: 15px;
+            background: #f8fafc;
+            transition: 0.3s;
+            text-align: center;
+        }
+
+        .feature-card:hover {
+            background: #278282;
+            color: white;
+            transform: translateY(-10px);
+        }
+
+        .feature-card:hover p {
+            color: rgba(255,255,255,0.8);
+        }
+
+        .feature-card i {
+            font-size: 2.5rem;
+            margin-bottom: 20px;
+            color: #278282;
+        }
+
+        .feature-card:hover i {
+            color: white;
+        }
+
+        .cta-section {
+            background: linear-gradient(rgba(39, 130, 130, 0.9), rgba(39, 130, 130, 0.9)), url('https://www.image2url.com/r2/default/images/1776767940648-fb7013a2-808d-4464-b265-db0c85273699.jpg');
+            background-size: cover;
+            background-position: center;
+            padding: 100px 20px;
+            color: white;
+            text-align: center;
+        }
+
+        .cta-section h2 {
+            font-size: 3rem;
+            margin-bottom: 20px;
+        }
+
+        .btn-cta {
+            display: inline-block;
+            padding: 15px 40px;
+            background: white;
+            color: #278282;
+            text-decoration: none;
+            border-radius: 50px;
+            font-weight: 700;
+            margin-top: 30px;
+            transition: 0.3s;
+        }
+
+        .btn-cta:hover {
+            transform: scale(1.05);
+            box-shadow: 0 10px 20px rgba(0,0,0,0.2);
+        }
     </style>
 </head>
 
@@ -139,6 +266,58 @@
             <h1>DISCOVER THE WORLD WITH OUR GUIDE</h1>
         </div>
     </div>
+
+    <section class="about-section">
+        <div class="container-wide">
+            <div class="about-image">
+                <img src="https://www.image2url.com/r2/default/images/1776767940648-fb7013a2-808d-4464-b265-db0c85273699.jpg" alt="About Us">
+            </div>
+            <div class="about-content">
+                <span class="section-subtitle">ABOUT US</span>
+                <h2 class="section-title">We Provide Best <span>Travel</span> Experience</h2>
+                <p>Welcome to OCEANWAVE, your premier partner in global exploration. We believe that travel is not just about visiting new places, but about creating memories that last a lifetime. Our platform is designed to give you full control over your journey, allowing you to customize every detail from accommodations to local excursions.</p>
+                <p>With a network of trusted partners worldwide and a passion for discovery, we ensure that every itinerary is crafted with care and precision.</p>
+                <div class="stats-grid">
+                    <div class="stat-item">
+                        <h3>15k+</h3>
+                        <p>Happy Travelers</p>
+                    </div>
+                    <div class="stat-item">
+                        <h3>200+</h3>
+                        <p>Destinations</p>
+                    </div>
+                    <div class="stat-item">
+                        <h3>10+</h3>
+                        <p>Years Experience</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="features-section">
+        <div class="container text-center mb-5">
+            <span class="section-subtitle">WHY CHOOSE US</span>
+            <h2 class="section-title">Our <span>Core</span> Values</h2>
+        </div>
+        <div class="features-grid">
+            <div class="feature-card">
+                <i class="fas fa-shield-alt"></i>
+                <h4>Safe Travels</h4>
+                <p>Your safety is our priority. We partner only with verified and highly-rated service providers.</p>
+            </div>
+            <div class="feature-card">
+                <i class="fas fa-tags"></i>
+                <h4>Best Prices</h4>
+                <p>Enjoy premium experiences at competitive rates with our transparent pricing model.</p>
+            </div>
+            <div class="feature-card">
+                <i class="fas fa-user-edit"></i>
+                <h4>Easy Customization</h4>
+                <p>Plan your trip your way. Our intuitive tools let you build the perfect itinerary in minutes.</p>
+            </div>
+        </div>
+    </section>
 
     <section class="testimonials">
         <span class="section-subtitle">TESTIMONIALS</span>
@@ -178,6 +357,14 @@
                     </div>
                 </div>
             </div>
+        </div>
+    </section>
+
+    <section class="cta-section">
+        <div class="container">
+            <h2>Ready to Start Your Adventure?</h2>
+            <p>Explore our wide range of destinations and create your custom itinerary today.</p>
+            <a href="${pageContext.request.contextPath}/destinations" class="btn-cta">Explore Destinations</a>
         </div>
     </section>
 
