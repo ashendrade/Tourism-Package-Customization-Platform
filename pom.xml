@@ -44,12 +44,12 @@
             <scope>test</scope>
         </dependency>
 
-<<<<<<< HEAD:tourism/pom.xml
         <dependency>
             <groupId>org.projectlombok</groupId>
             <artifactId>lombok</artifactId>
             <optional>true</optional>
-=======
+        </dependency>
+
         <!-- JSP Support -->
         <dependency>
             <groupId>org.apache.tomcat.embed</groupId>
@@ -62,7 +62,6 @@
         <dependency>
             <groupId>org.glassfish.web</groupId>
             <artifactId>jakarta.servlet.jsp.jstl</artifactId>
->>>>>>> e82e0b4a687f7bbe8b9dccb18ef6f700dfdd4bb0:pom.xml
         </dependency>
 
     </dependencies>

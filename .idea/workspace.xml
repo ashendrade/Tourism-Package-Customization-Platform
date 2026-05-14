@@ -4,21 +4,10 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-<<<<<<< HEAD
     <list default="true" id="01f5e971-f1b3-4130-b055-5d06be971329" name="Changes" comment="Banujan">
-=======
-<<<<<<< HEAD
-    <list default="true" id="01f5e971-f1b3-4130-b055-5d06be971329" name="Changes" comment="" />
-=======
-    <list default="true" id="01f5e971-f1b3-4130-b055-5d06be971329" name="Changes" comment="">
-<<<<<<< Updated upstream
-=======
       <change beforePath="$PROJECT_DIR$/.idea/compiler.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/compiler.xml" afterDir="false" />
->>>>>>> Stashed changes
->>>>>>> e82e0b4a687f7bbe8b9dccb18ef6f700dfdd4bb0
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
     </list>
->>>>>>> main
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -78,15 +67,11 @@
     &quot;RunOnceActivity.TerminalTabsStorage.copyFrom.TerminalArrangementManager.252&quot;: &quot;true&quot;,
     &quot;RunOnceActivity.git.unshallow&quot;: &quot;true&quot;,
     &quot;RunOnceActivity.typescript.service.memoryLimit.init&quot;: &quot;true&quot;,
-<<<<<<< HEAD
     &quot;Spring Boot.TourismApplication.executor&quot;: &quot;Run&quot;,
     &quot;com.intellij.ml.llm.matterhorn.ej.ui.settings.DefaultModelSelectionForGA.v1&quot;: &quot;true&quot;,
     &quot;git-widget-placeholder&quot;: &quot;Booking-and-Payment-Component&quot;,
     &quot;ignore.virus.scanning.warn.message&quot;: &quot;true&quot;,
     &quot;junie.onboarding.icon.badge.shown&quot;: &quot;true&quot;,
-=======
-    &quot;git-widget-placeholder&quot;: &quot;pricingBudgetCalculation&quot;,
->>>>>>> e82e0b4a687f7bbe8b9dccb18ef6f700dfdd4bb0
     &quot;kotlin-language-version-configured&quot;: &quot;true&quot;,
     &quot;last_opened_file_path&quot;: &quot;C:/Users/USER/OneDrive/Desktop/Tourism-Package-Customization-Platform&quot;,
     &quot;project.structure.last.edited&quot;: &quot;Modules&quot;,
@@ -117,7 +102,7 @@
   </component>
   <component name="RunManager">
     <configuration name="TourismApplication" type="SpringBootApplicationConfigurationType" factoryName="Spring Boot" nameIsGenerated="true">
-      <module name="Tourism-Package-Customization-Platformj" />
+      <module name="tourism" />
       <option name="SPRING_BOOT_MAIN_CLASS" value="com.tourism.TourismApplication" />
       <method v="2">
         <option name="Make" enabled="true" />
@@ -140,17 +125,10 @@
       <updated>1774671597599</updated>
       <workItem from="1774671598816" duration="1136000" />
       <workItem from="1774743691431" duration="20000" />
-<<<<<<< HEAD
-      <workItem from="1776965811121" duration="69000" />
-=======
-<<<<<<< Updated upstream
-=======
       <workItem from="1776965811121" duration="69000" />
       <workItem from="1777807972166" duration="1850000" />
       <workItem from="1778057754313" duration="4000" />
       <workItem from="1778659216723" duration="1305000" />
->>>>>>> Stashed changes
->>>>>>> main
     </task>
     <task id="LOCAL-00001" summary="Banujan">
       <option name="closed" value="true" />

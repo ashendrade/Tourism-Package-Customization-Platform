@@ -12,7 +12,8 @@ import static org.junit.jupiter.api.Assertions.assertFalse;
 import static org.junit.jupiter.api.Assertions.assertNotNull;
 
 @SpringBootTest
-class PackageLoadingTest {
+class
+PackageLoadingTest {
 
     @Autowired
     private PackageService packageService;

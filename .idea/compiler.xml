@@ -2,19 +2,12 @@
 <project version="4">
   <component name="CompilerConfiguration">
     <annotationProcessing>
-<<<<<<< HEAD
       <profile default="true" name="Default" enabled="true" />
-=======
->>>>>>> e82e0b4a687f7bbe8b9dccb18ef6f700dfdd4bb0
       <profile name="Maven default annotation processors profile" enabled="true">
         <sourceOutputDir name="target/generated-sources/annotations" />
         <sourceTestOutputDir name="target/generated-test-sources/test-annotations" />
         <outputRelativeToContentRoot value="true" />
-<<<<<<< HEAD
         <module name="tourism" />
-=======
-        <module name="Tourism-Package-Customization-Platformj" />
->>>>>>> e82e0b4a687f7bbe8b9dccb18ef6f700dfdd4bb0
       </profile>
     </annotationProcessing>
     <bytecodeTargetLevel target="17">

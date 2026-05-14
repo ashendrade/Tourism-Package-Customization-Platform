@@ -11,9 +11,7 @@ import java.util.ArrayList;
 import java.util.List;
 
 @Service
-public class
-
-PackageService {
+public class PackageService {
 
     // Updated path to look inside the 'data' folder
     private static final String FILE_PATH = "data/packages.txt";
@@ -33,8 +31,6 @@ PackageService {
         }
     }
 
-<<<<<<< HEAD:tourism/src/main/java/com/tourism/service/PackageService.java
-=======
     @Autowired
     private BudgetRepository budgetRepository;
 
@@ -62,7 +58,6 @@ PackageService {
     }
 
     
->>>>>>> e82e0b4a687f7bbe8b9dccb18ef6f700dfdd4bb0:src/main/java/com/tourism/service/PackageService.java
     public String createPackage(TravelPackage pkg) {
         ensureFileExists();
         try (BufferedWriter writer = new BufferedWriter(new FileWriter(FILE_PATH, true))) {
