@@ -2,7 +2,7 @@
 <project version="4">
   <component name="ProjectModuleManager">
     <modules>
-      <module fileurl="file://$PROJECT_DIR$/.idea/Tourism-Package-Customization-Platform.iml" filepath="$PROJECT_DIR$/.idea/Tourism-Package-Customization-Platform.iml" />
+      <module fileurl="file://$PROJECT_DIR$/tourism.iml" filepath="$PROJECT_DIR$/tourism.iml" />
     </modules>
   </component>
 </project>
