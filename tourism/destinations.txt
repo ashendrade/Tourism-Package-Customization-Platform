@@ -1,0 +1,5 @@
+DEST1777117163900,test,Sri Lanka,test,Adventure,8123145.00,test discription
+DEST1003,Ella,Sri Lanka,Ella,Adventure,15000.00,Hiking and nature tours in the hill
+DEST1004,Paris,France,Paris,Luxury,95000.00,Romantic city with art and 
+DEST35CB8ED2,Lankagama Leafy Riverview ,Sri Lanka,galle,Honeymoon,99999.99, description 
+DEST8D7E4A46,river side ,Sri Lanka,Ella,Family,45000.00,attractive places 
