@@ -5,67 +5,35 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="01f5e971-f1b3-4130-b055-5d06be971329" name="Changes" comment="Banujan">
-      <change beforePath="$PROJECT_DIR$/.idea/compiler.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/compiler.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/modules.xml" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/data/bookings.txt" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/data/packages.txt" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/data/payments.txt" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/data/reviews.txt" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/data/users.txt" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/index.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/packages.txt" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/pricing.txt" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/responsive.css" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/script.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/tourism/model/Payment.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/tourism/model/Payment.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/tourism/controller/BookingController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/tourism/controller/BookingController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/tourism/controller/BudgetController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/tourism/controller/BudgetController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/tourism/controller/ReviewController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/tourism/controller/ReviewController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/tourism/model/Booking.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/tourism/model/Booking.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/tourism/model/Budget.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/tourism/model/Budget.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/tourism/model/Destination.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/tourism/model/Destination.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/tourism/model/ForeignDestination.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/tourism/model/ForeignDestination.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/tourism/model/LocalDestination.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/tourism/model/LocalDestination.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/tourism/model/Review.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/tourism/model/Review.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/tourism/model/TravelPackage.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/tourism/model/TravelPackage.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/tourism/repository/BudgetRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/tourism/repository/BudgetRepository.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/tourism/repository/PackageRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/tourism/repository/PackageRepository.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/tourism/repository/UserRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/tourism/repository/UserRepository.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/tourism/service/BookingService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/tourism/service/BookingService.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/tourism/service/PackageService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/tourism/service/PackageService.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/tourism/service/PaymentService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/tourism/service/PaymentService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/tourism/service/UserService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/tourism/service/UserService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/tourism/util/DestinationFileHandler.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/tourism/util/DestinationFileHandler.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/data/destinations.txt" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/data/destinations.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/data/users.txt" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/data/users.txt" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/webapp/WEB-INF/jsp/budget_view.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/WEB-INF/jsp/budget_view.jsp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/tourism/TourismApplicationTests.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/style.css" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/swiper.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/tourism/data/bookings.txt" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/tourism/data/packages.txt" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/tourism/data/payments.txt" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/tourism/destinations.txt" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/tourism/packages.txt" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/tourism/pom.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/tourism/src/main/java/com/tourism/controller/BookingController.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/tourism/src/main/java/com/tourism/controller/DestinationController.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/tourism/src/main/java/com/tourism/controller/PaymentController.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/tourism/src/main/java/com/tourism/model/Booking.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/tourism/src/main/java/com/tourism/model/Destination.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/tourism/src/main/java/com/tourism/model/ForeignDestination.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/tourism/src/main/java/com/tourism/model/LocalDestination.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/tourism/src/main/java/com/tourism/model/Payment.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/tourism/src/main/java/com/tourism/public/css/responsive.css" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/tourism/src/main/java/com/tourism/public/css/style.css" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/tourism/src/main/java/com/tourism/public/img/WhatsApp Image 2026-04-21 at 13.23.32.jpeg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/tourism/src/main/java/com/tourism/public/img/ocean logo with waves and seagulls.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/tourism/src/main/java/com/tourism/public/img/╰┈➤ will solace _ aesthetic _ percy jackson and the olympians _ pjo.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/tourism/src/main/java/com/tourism/public/index.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/tourism/src/main/java/com/tourism/public/js/script.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/tourism/src/main/java/com/tourism/public/js/swiper.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/tourism/src/main/java/com/tourism/service/BookingService.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/tourism/src/main/java/com/tourism/service/DestinationService.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/tourism/src/main/java/com/tourism/service/PackageService.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/tourism/src/main/java/com/tourism/service/PaymentService.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/tourism/src/main/java/com/tourism/util/DestinationFileHandler.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/tourism/src/main/java/com/tourism/util/FileHandler.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/tourism/src/main/resources/application.properties" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/tourism/src/main/resources/static/css/style.css" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/tourism/src/main/resources/static/index.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/tourism/src/main/resources/static/js/app.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/tourism/src/main/webapp/WEB-INF/jsp/add.jsp" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/tourism/src/main/webapp/WEB-INF/jsp/edit.jsp" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/tourism/src/main/webapp/WEB-INF/jsp/list.jsp" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/tourism/src/test/java/com/tourism/PackageLoadingTest.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/tourism/src/test/java/com/tourism/TourismApplicationTests.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/WEB-INF/jsp/home.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/WEB-INF/jsp/home.jsp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/WEB-INF/jsp/list.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/WEB-INF/jsp/list.jsp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/WEB-INF/jsp/login.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/WEB-INF/jsp/login.jsp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/WEB-INF/jsp/navbar.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/WEB-INF/jsp/navbar.jsp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/WEB-INF/jsp/register.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/WEB-INF/jsp/register.jsp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/WEB-INF/jsp/reviews.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/WEB-INF/jsp/reviews.jsp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/css/style.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/css/style.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/updates.md" beforeDir="false" afterPath="$PROJECT_DIR$/updates.md" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -115,6 +83,10 @@
     "Application.TourismApplication.executor": "Run",
     "Maven.tourism [clean].executor": "Run",
     "Maven.tourism [install].executor": "Run",
+    "RequestMappingsPanelOrder0": "0",
+    "RequestMappingsPanelOrder1": "1",
+    "RequestMappingsPanelWidth0": "75",
+    "RequestMappingsPanelWidth1": "75",
     "RunOnceActivity.ShowReadmeOnStart": "true",
     "RunOnceActivity.git.unshallow": "true",
     "RunOnceActivity.typescript.service.memoryLimit.init": "true",
@@ -153,7 +125,7 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1774671597599</updated>
-      <workItem from="1778755959889" duration="1337000" />
+      <workItem from="1778755959889" duration="5150000" />
     </task>
     <servers />
   </component>

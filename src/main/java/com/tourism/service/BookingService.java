@@ -2,6 +2,7 @@ package com.tourism.service;
 
 import com.tourism.model.Booking;
 import com.tourism.util.FileHandler;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import java.io.IOException;
@@ -14,7 +15,24 @@ public class BookingService {
 
     private final String FILE_PATH = "src/main/resources/data/bookings.txt";
 
+    @Autowired
+    private com.tourism.repository.BudgetRepository budgetRepository;
+
     public Booking createBooking(Booking booking) throws IOException {
+        // Finalize price from quotes.txt
+        List<com.tourism.model.Budget> budgets = budgetRepository.readAllBudgets();
+        double price = budgets.stream()
+                .filter(b -> b.getPackageId().equals(booking.getPackageId()))
+                .map(com.tourism.model.Budget::getTotalPrice)
+                .findFirst()
+                .orElse(0.0);
+        
+        booking.setPrice(price);
+        booking.setStatus("PENDING");
+        if (booking.getId() == null || booking.getId().isEmpty()) {
+            booking.setId("BK" + System.currentTimeMillis() % 1000000);
+        }
+        
         FileHandler.appendLine(FILE_PATH, booking.toTextLine());
         return booking;
     }
@@ -37,6 +55,29 @@ public class BookingService {
             if (b != null) {
                 if (b.getId().equals(bookingId)) {
                     b.setStatus("CANCELLED");
+                    found = true;
+                }
+                updatedLines.add(b.toTextLine());
+            }
+        }
+
+        if (found) {
+            FileHandler.writeLines(FILE_PATH, updatedLines);
+        }
+        return found;
+    }
+
+    public boolean confirmBooking(String bookingId) throws IOException {
+        List<Booking> allBookings = FileHandler.readLines(FILE_PATH).stream()
+                .map(Booking::fromTextLine)
+                .collect(Collectors.toList());
+
+        boolean found = false;
+        List<String> updatedLines = new ArrayList<>();
+        for (Booking b : allBookings) {
+            if (b != null) {
+                if (b.getId().equals(bookingId)) {
+                    b.setStatus("CONFIRMED");
                     found = true;
                 }
                 updatedLines.add(b.toTextLine());

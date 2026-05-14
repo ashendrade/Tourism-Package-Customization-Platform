@@ -1,5 +1,6 @@
 package com.tourism.service;
 
+import com.tourism.model.Admin;
 import com.tourism.model.Traveler;
 import com.tourism.model.User;
 import com.tourism.repository.UserRepository;
@@ -19,7 +20,12 @@ public class UserService {
             return false;
         }
         String id = UUID.randomUUID().toString().substring(0, 8);
-        User user = new Traveler(id, username, password); // Default to Traveler for now
+        User user;
+        if ("ADMIN".equalsIgnoreCase(role)) {
+            user = new Admin(id, username, password);
+        } else {
+            user = new Traveler(id, username, password);
+        }
         userRepository.saveUser(user);
         return true;
     }

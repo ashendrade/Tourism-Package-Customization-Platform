@@ -13,7 +13,7 @@ public class PackageRepository {
 
     public void save(TravelPackage pkg) {
         try (BufferedWriter writer = new BufferedWriter(new FileWriter(FILE_PATH, true))) {
-            writer.write(pkg.getId() + "," + pkg.getName() + "," + pkg.getDestination() + "," + pkg.getHotelType() + "," + pkg.getDuration());
+            writer.write(formatPackage(pkg));
             writer.newLine();
         } catch (IOException e) {
             e.printStackTrace();
@@ -29,9 +29,24 @@ public class PackageRepository {
             String line;
             while ((line = reader.readLine()) != null) {
                 if (line.trim().isEmpty()) continue;
-                String[] data = line.split(",");
-                if (data.length >= 5) {
-                    list.add(new TravelPackage(data[0], data[1], data[2], data[3], Integer.parseInt(data[4].trim())));
+                try {
+                    String[] data = line.split(",", 8);
+                    if (data.length == 8) {
+                        list.add(new TravelPackage(
+                            data[0], data[1], data[2], data[3], 
+                            Integer.parseInt(data[4].trim()), 
+                            data[5], data[6], data[7]
+                        ));
+                    } else if (data.length == 5) {
+                        // Backward compatibility
+                        list.add(new TravelPackage(
+                            data[0], data[1], data[2], data[3], 
+                            Integer.parseInt(data[4].trim()),
+                            "Standard Tour", "", "Standard"
+                        ));
+                    }
+                } catch (Exception e) {
+                    System.err.println("Error parsing package line: " + line);
                 }
             }
         } catch (IOException e) {
@@ -43,11 +58,24 @@ public class PackageRepository {
     public void rewrite(List<TravelPackage> packages) {
         try (BufferedWriter writer = new BufferedWriter(new FileWriter(FILE_PATH))) {
             for (TravelPackage pkg : packages) {
-                writer.write(pkg.getId() + "," + pkg.getName() + "," + pkg.getDestination() + "," + pkg.getHotelType() + "," + pkg.getDuration());
+                writer.write(formatPackage(pkg));
                 writer.newLine();
             }
         } catch (IOException e) {
             e.printStackTrace();
         }
+    }
+
+    private String formatPackage(TravelPackage pkg) {
+        return String.format("%s,%s,%s,%s,%d,%s,%s,%s",
+            pkg.getId(),
+            pkg.getName(),
+            pkg.getDestination(),
+            pkg.getHotelType(),
+            pkg.getDuration(),
+            pkg.getActivities() != null ? pkg.getActivities() : "Standard Tour",
+            pkg.getSpecialRequest() != null ? pkg.getSpecialRequest() : "",
+            pkg.getHotelTier() != null ? pkg.getHotelTier() : "Standard"
+        );
     }
 }

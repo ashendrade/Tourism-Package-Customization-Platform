@@ -28,109 +28,14 @@ img {
 }
 
 /*---------header---------------*/
-header {
-    padding: 0.5rem 0;
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    min-height: 60px;
-    background: transparent;
-    z-index: 999;
-}
-
-.container {
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    max-width: 1200px;
-    margin: 0 auto;
-    padding: 0 2rem;
-    width: 100%;
-}
-
-.logo img {
-    width: 120px;
-    height: auto;
-    object-fit: cover;
-}
-
-nav {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    width: 100%;
-    gap: 1.5rem;
-}
-
-nav ul {
-    list-style-type: none;
-    display: flex;
-    align-items: center;
-    gap: 1.5rem;
-}
-
-nav ul li {
-    margin: 0;
-    position: relative;
-}
-
-nav ul li a {
-    color: #fff;
-    font-size: 1.1rem;
-}
-
-nav ul li::before {
-    content: "";
-    position: absolute;
-    bottom: -5px;
-    left: 0;
-    width: 0;
-    height: 3px;
-    background: #fff;
-    transition: all 0.3s ease-in;
-    opacity: 0;
-}
-
-nav ul li:hover::before {
-    opacity: 1;
-    width: 100%;
+/* Global Layout Fixes */
+header.navbar-header {
+    position: sticky !important;
+    background: white !important;
 }
 
 /*---------login button---------------*/
-.btnLogin-popup {
-    width: 130px;
-    height: 45px;
-    background: transparent;
-    border: 2px solid #fff;
-    outline: none;
-    border-radius: 6px;
-    cursor: pointer;
-    font-size: 1.1em;
-    color: #fff;
-    font-weight: 500;
-    margin-left: 20px;
-    transition: all 0.3s ease;
-}
-
-.btnLogin-popup:hover { background: #329d9d; }
-
-.btnLogout {
-    width: 130px;
-    height: 45px;
-    background: transparent;
-    border: 2px solid #fff;
-    outline: none;
-    border-radius: 6px;
-    cursor: pointer;
-    font-size: 1.1em;
-    color: #fff;
-    font-weight: 500;
-    margin-left: 20px;
-    transition: all 0.3s ease;
-}
-
-.btnLogout:hover { background: #13626c; }
+/* Auth buttons are handled in navbar.jsp */
 
 /*---------showcase---------------*/
 main {

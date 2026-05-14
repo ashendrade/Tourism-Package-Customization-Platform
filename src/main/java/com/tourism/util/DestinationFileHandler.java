@@ -14,15 +14,7 @@ public class DestinationFileHandler {
 
     public void saveDestination(Destination destination) {
         try (BufferedWriter writer = new BufferedWriter(new FileWriter(FILE_PATH, true))) {
-            String line = String.format("%s,%s,%s,%s,%s,%.2f,%s",
-                    destination.getDestinationId(),
-                    destination.getDestinationName(),
-                    destination.getCountry(),
-                    destination.getCity(),
-                    destination.getPackageType(),
-                    destination.getPrice(),
-                    destination.getDescription());
-            writer.write(line);
+            writer.write(formatDestination(destination));
             writer.newLine();
         } catch (IOException e) {
             e.printStackTrace();
@@ -35,11 +27,21 @@ public class DestinationFileHandler {
         try (BufferedReader reader = new BufferedReader(new FileReader(FILE_PATH))) {
             String line;
             while ((line = reader.readLine()) != null) {
-                String[] parts = line.split(",");
-                if (parts.length == 7) {
+                String[] parts = line.split(",", 13);
+                if (parts.length == 13) {
                     Destination dest = new Destination(
                             parts[0], parts[1], parts[2], parts[3],
-                            parts[4], Double.parseDouble(parts[5]), parts[6]
+                            parts[4], Double.parseDouble(parts[5]), parts[6],
+                            parts[7], parts[8], parts[9], parts[10],
+                            parts[11], parts[12]
+                    );
+                    destinations.add(dest);
+                } else if (parts.length == 7) {
+                    // Backward compatibility for old data format
+                    Destination dest = new Destination(
+                            parts[0], parts[1], parts[2], parts[3],
+                            parts[4], Double.parseDouble(parts[5]), parts[6],
+                            "default.jpg", "", "Pleasant", "Respect locals", "Bus, Taxi", "General"
                     );
                     destinations.add(dest);
                 }
@@ -51,6 +53,24 @@ public class DestinationFileHandler {
         }
 
         return destinations;
+    }
+
+    private String formatDestination(Destination dest) {
+        return String.format("%s,%s,%s,%s,%s,%.2f,%s,%s,%s,%s,%s,%s,%s",
+                dest.getDestinationId(),
+                dest.getDestinationName(),
+                dest.getCountry(),
+                dest.getCity(),
+                dest.getPackageType(),
+                dest.getPrice(),
+                dest.getDescription(),
+                dest.getImageUrl() != null ? dest.getImageUrl() : "default.jpg",
+                dest.getVideoUrl() != null ? dest.getVideoUrl() : "",
+                dest.getWeatherInfo() != null ? dest.getWeatherInfo() : "Pleasant",
+                dest.getCulturalEtiquette() != null ? dest.getCulturalEtiquette() : "Respect locals",
+                dest.getTransportOptions() != null ? dest.getTransportOptions() : "Bus, Taxi",
+                dest.getPoiType() != null ? dest.getPoiType() : "General"
+        );
     }
 
     public Destination getDestinationById(String destinationId) {
@@ -91,15 +111,7 @@ public class DestinationFileHandler {
     private void rewriteFile(List<Destination> destinations) {
         try (BufferedWriter writer = new BufferedWriter(new FileWriter(FILE_PATH))) {
             for (Destination dest : destinations) {
-                String line = String.format("%s,%s,%s,%s,%s,%.2f,%s",
-                        dest.getDestinationId(),
-                        dest.getDestinationName(),
-                        dest.getCountry(),
-                        dest.getCity(),
-                        dest.getPackageType(),
-                        dest.getPrice(),
-                        dest.getDescription());
-                writer.write(line);
+                writer.write(formatDestination(dest));
                 writer.newLine();
             }
         } catch (IOException e) {

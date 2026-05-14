@@ -52,6 +52,20 @@ public class BookingController {
         }
     }
 
+    @PutMapping("/{id}/confirm")
+    public ResponseEntity<String> confirmBooking(@PathVariable String id) {
+        try {
+            boolean success = bookingService.confirmBooking(id);
+            if (success) {
+                return new ResponseEntity<>("Booking confirmed successfully", HttpStatus.OK);
+            } else {
+                return new ResponseEntity<>("Booking ID not found", HttpStatus.NOT_FOUND);
+            }
+        } catch (IOException e) {
+            return new ResponseEntity<>(HttpStatus.INTERNAL_SERVER_ERROR);
+        }
+    }
+
     @DeleteMapping("/{id}")
     public ResponseEntity<String> deleteBooking(@PathVariable String id) {
         try {

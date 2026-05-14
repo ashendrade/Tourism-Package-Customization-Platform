@@ -18,10 +18,7 @@ public class BudgetRepository {
      */
     public void saveToFile(Budget budget) {
         try (BufferedWriter writer = new BufferedWriter(new FileWriter(FILE_PATH, true))) {
-            writer.write(budget.getPackageId() + "|" +
-                         budget.getBasePrice() + "|" +
-                         budget.getCustomAddons() + "|" +
-                         budget.getTotalPrice());
+            writer.write(formatBudget(budget));
             writer.newLine();
         } catch (IOException e) {
             System.err.println("Error writing to file: " + e.getMessage());
@@ -45,12 +42,26 @@ public class BudgetRepository {
                 if (line.trim().isEmpty()) continue;
                 
                 String[] data = line.split(DELIMITER);
-                if (data.length == 4) {
+                if (data.length == 8) {
                     Budget budget = new Budget(
                         data[0],
                         Double.parseDouble(data[1]),
                         Double.parseDouble(data[2]),
-                        Double.parseDouble(data[3])
+                        Double.parseDouble(data[3]),
+                        Double.parseDouble(data[4]),
+                        Double.parseDouble(data[5]),
+                        Double.parseDouble(data[6]),
+                        data[7]
+                    );
+                    budgets.add(budget);
+                } else if (data.length == 4) {
+                    // Backward compatibility
+                    Budget budget = new Budget(
+                        data[0],
+                        Double.parseDouble(data[1]),
+                        Double.parseDouble(data[2]),
+                        Double.parseDouble(data[3]),
+                        0.0, 0.0, 0.0, "One-time"
                     );
                     budgets.add(budget);
                 }
@@ -74,30 +85,34 @@ public class BudgetRepository {
         try (BufferedWriter writer = new BufferedWriter(new FileWriter(FILE_PATH))) {
             for (Budget b : budgets) {
                 if (b.getPackageId().equals(updatedBudget.getPackageId())) {
-                    writer.write(updatedBudget.getPackageId() + "|" +
-                                 updatedBudget.getBasePrice() + "|" +
-                                 updatedBudget.getCustomAddons() + "|" +
-                                 updatedBudget.getTotalPrice());
+                    writer.write(formatBudget(updatedBudget));
                     found = true;
                 } else {
-                    writer.write(b.getPackageId() + "|" +
-                                 b.getBasePrice() + "|" +
-                                 b.getCustomAddons() + "|" +
-                                 b.getTotalPrice());
+                    writer.write(formatBudget(b));
                 }
                 writer.newLine();
             }
             
             // If not found, add it as a new record
             if (!found) {
-                writer.write(updatedBudget.getPackageId() + "|" +
-                             updatedBudget.getBasePrice() + "|" +
-                             updatedBudget.getCustomAddons() + "|" +
-                             updatedBudget.getTotalPrice());
+                writer.write(formatBudget(updatedBudget));
                 writer.newLine();
             }
         } catch (IOException e) {
             System.err.println("Error updating file: " + e.getMessage());
         }
+    }
+
+    private String formatBudget(Budget b) {
+        return String.format("%s|%.2f|%.2f|%.2f|%.2f|%.2f|%.2f|%s",
+            b.getPackageId(),
+            b.getBasePrice(),
+            b.getCustomAddons(),
+            b.getTotalPrice(),
+            b.getTax(),
+            b.getServiceCharge(),
+            b.getEstimatedMeals(),
+            b.getPaymentPlan() != null ? b.getPaymentPlan() : "One-time"
+        );
     }
 }

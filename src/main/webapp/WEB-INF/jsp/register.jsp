@@ -6,87 +6,68 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Register - Tourism Platform</title>
-    <!-- Bootstrap CSS -->
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
-    <!-- Project CSS -->
-    <link rel="stylesheet" href="/css/style.css">
     <style>
         body {
-            background: linear-gradient(rgba(0,0,0,0.6), rgba(0,0,0,0.6)), url('https://www.image2url.com/r2/default/images/1776767940648-fb7013a2-808d-4464-b265-db0c85273699.jpg');
-            background-size: cover;
-            background-attachment: fixed;
+            background: #F8FAFC;
             height: 100vh;
             display: flex;
             align-items: center;
             justify-content: center;
         }
-        .glass-card {
-            background: rgba(255, 255, 255, 0.1);
-            backdrop-filter: blur(15px);
-            border: 1px solid rgba(255, 255, 255, 0.2);
-            border-radius: 20px;
+        .register-card {
+            background: white;
+            border: 1px solid #E2E8F0;
+            border-radius: 10px;
             padding: 40px;
             width: 100%;
             max-width: 400px;
-            color: white;
-            box-shadow: 0 8px 32px 0 rgba(0, 0, 0, 0.37);
-        }
-        .form-control {
-            background: rgba(255, 255, 255, 0.1);
-            border: 1px solid rgba(255, 255, 255, 0.3);
-            color: white !important;
-            padding: 12px;
-        }
-        .form-control:focus {
-            background: rgba(255, 255, 255, 0.2);
-            border-color: #278282;
-            box-shadow: none;
-            color: white;
+            box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1);
         }
         .btn-primary {
             background-color: #278282;
             border: none;
-            padding: 12px;
+            padding: 10px;
             font-weight: 600;
         }
         .btn-primary:hover {
             background-color: #1f6b6b;
         }
-        .login-link {
-            color: #4ecdc4;
-            text-decoration: none;
-            font-weight: 600;
-        }
-        .login-link:hover {
-            text-decoration: underline;
+        .text-info {
+            color: #278282 !important;
         }
     </style>
 </head>
 <body>
 
-<div class="glass-card">
-    <h2 class="text-center mb-4">Register</h2>
+<div class="register-card">
+    <div class="text-center mb-4">
+        <h3 class="fw-bold">Create Account</h3>
+        <p class="text-muted small">Join us for your next adventure</p>
+    </div>
+    
     <c:if test="${not empty error}">
-        <div class="alert alert-danger bg-transparent text-white border-danger mb-4">
+        <div class="alert alert-danger mb-3 py-2 small">
             ${error}
         </div>
     </c:if>
+    
     <form action="/register" method="POST">
         <div class="mb-3">
-            <label class="form-label">Username</label>
-            <input type="text" name="username" class="form-control" placeholder="Choose a username" required>
+            <label class="form-label small fw-bold">Username</label>
+            <input type="text" name="username" class="form-control" required>
         </div>
         <div class="mb-3">
-            <label class="form-label">Email</label>
-            <input type="email" name="email" class="form-control" placeholder="Enter your email" required>
+            <label class="form-label small fw-bold">Email</label>
+            <input type="email" name="email" class="form-control" required>
         </div>
         <div class="mb-4">
-            <label class="form-label">Password</label>
-            <input type="password" name="password" class="form-control" placeholder="Create a password" required>
+            <label class="form-label small fw-bold">Password</label>
+            <input type="password" name="password" class="form-control" required>
         </div>
-        <button type="submit" class="btn btn-primary w-100 mb-3">Create Account</button>
-        <p class="text-center mb-0">
-            Already have an account? <a href="/login" class="login-link">Login</a>
+        <button type="submit" class="btn btn-primary w-100 mb-3">Register</button>
+        <p class="text-center small text-muted">
+            Already have an account? <a href="/login" class="text-info">Login</a>
         </p>
     </form>
 </div>

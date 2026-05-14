@@ -12,8 +12,11 @@ public class ForeignDestination extends Destination {
 
     public ForeignDestination(String destinationId, String destinationName, String country,
                               String city, String packageType, double price, String description,
+                              String imageUrl, String videoUrl, String weatherInfo, 
+                              String culturalEtiquette, String transportOptions, String poiType,
                               String visaRequired, String flightDuration, String currency) {
-        super(destinationId, destinationName, country, city, packageType, price, description);
+        super(destinationId, destinationName, country, city, packageType, price, description,
+              imageUrl, videoUrl, weatherInfo, culturalEtiquette, transportOptions, poiType);
         this.visaRequired = visaRequired;
         this.flightDuration = flightDuration;
         this.currency = currency;

@@ -11,8 +11,11 @@ public class LocalDestination extends Destination {
 
     public LocalDestination(String destinationId, String destinationName, String country,
                             String city, String packageType, double price, String description,
+                            String imageUrl, String videoUrl, String weatherInfo, 
+                            String culturalEtiquette, String transportOptions, String poiType,
                             String province, String localTransport) {
-        super(destinationId, destinationName, country, city, packageType, price, description);
+        super(destinationId, destinationName, country, city, packageType, price, description,
+              imageUrl, videoUrl, weatherInfo, culturalEtiquette, transportOptions, poiType);
         this.province = province;
         this.localTransport = localTransport;
     }

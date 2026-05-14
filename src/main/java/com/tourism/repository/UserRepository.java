@@ -30,6 +30,9 @@ public class UserRepository {
         try (BufferedReader reader = new BufferedReader(new FileReader(file))) {
             String line;
             while ((line = reader.readLine()) != null) {
+                line = line.trim();
+                if (line.isEmpty()) continue;
+                
                 String[] data = line.split(",");
                 if (data.length == 4) {
                     User user;
