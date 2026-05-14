@@ -12,7 +12,7 @@ import java.util.stream.Collectors;
 @Service
 public class PaymentService {
 
-    private final String FILE_PATH = "data/payments.txt";
+    private final String FILE_PATH = "src/main/resources/data/payments.txt";
 
     public Payment pay(Payment payment) throws IOException {
         payment.setStatus("COMPLETED");

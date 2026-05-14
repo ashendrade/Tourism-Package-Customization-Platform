@@ -4,21 +4,69 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-<<<<<<< HEAD
     <list default="true" id="01f5e971-f1b3-4130-b055-5d06be971329" name="Changes" comment="Banujan">
-=======
-<<<<<<< HEAD
-    <list default="true" id="01f5e971-f1b3-4130-b055-5d06be971329" name="Changes" comment="" />
-=======
-    <list default="true" id="01f5e971-f1b3-4130-b055-5d06be971329" name="Changes" comment="">
-<<<<<<< Updated upstream
-=======
       <change beforePath="$PROJECT_DIR$/.idea/compiler.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/compiler.xml" afterDir="false" />
->>>>>>> Stashed changes
->>>>>>> e82e0b4a687f7bbe8b9dccb18ef6f700dfdd4bb0
+      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/modules.xml" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/data/bookings.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/data/packages.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/data/payments.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/data/reviews.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/data/users.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/index.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/packages.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/pricing.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/responsive.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/script.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/tourism/model/Payment.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/tourism/model/Payment.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/tourism/repository/BudgetRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/tourism/repository/BudgetRepository.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/tourism/service/BookingService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/tourism/service/BookingService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/tourism/service/PackageService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/tourism/service/PackageService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/tourism/service/PaymentService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/tourism/service/PaymentService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/WEB-INF/jsp/budget_view.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/WEB-INF/jsp/budget_view.jsp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/tourism/TourismApplicationTests.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/style.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/swiper.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/tourism/data/bookings.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/tourism/data/packages.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/tourism/data/payments.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/tourism/destinations.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/tourism/packages.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/tourism/pom.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/tourism/src/main/java/com/tourism/controller/BookingController.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/tourism/src/main/java/com/tourism/controller/DestinationController.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/tourism/src/main/java/com/tourism/controller/PaymentController.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/tourism/src/main/java/com/tourism/model/Booking.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/tourism/src/main/java/com/tourism/model/Destination.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/tourism/src/main/java/com/tourism/model/ForeignDestination.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/tourism/src/main/java/com/tourism/model/LocalDestination.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/tourism/src/main/java/com/tourism/model/Payment.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/tourism/src/main/java/com/tourism/public/css/responsive.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/tourism/src/main/java/com/tourism/public/css/style.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/tourism/src/main/java/com/tourism/public/img/WhatsApp Image 2026-04-21 at 13.23.32.jpeg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/tourism/src/main/java/com/tourism/public/img/ocean logo with waves and seagulls.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/tourism/src/main/java/com/tourism/public/img/╰┈➤ will solace _ aesthetic _ percy jackson and the olympians _ pjo.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/tourism/src/main/java/com/tourism/public/index.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/tourism/src/main/java/com/tourism/public/js/script.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/tourism/src/main/java/com/tourism/public/js/swiper.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/tourism/src/main/java/com/tourism/service/BookingService.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/tourism/src/main/java/com/tourism/service/DestinationService.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/tourism/src/main/java/com/tourism/service/PackageService.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/tourism/src/main/java/com/tourism/service/PaymentService.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/tourism/src/main/java/com/tourism/util/DestinationFileHandler.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/tourism/src/main/java/com/tourism/util/FileHandler.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/tourism/src/main/resources/application.properties" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/tourism/src/main/resources/static/css/style.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/tourism/src/main/resources/static/index.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/tourism/src/main/resources/static/js/app.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/tourism/src/main/webapp/WEB-INF/jsp/add.jsp" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/tourism/src/main/webapp/WEB-INF/jsp/edit.jsp" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/tourism/src/main/webapp/WEB-INF/jsp/list.jsp" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/tourism/src/test/java/com/tourism/PackageLoadingTest.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/tourism/src/test/java/com/tourism/TourismApplicationTests.java" beforeDir="false" />
     </list>
->>>>>>> main
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -34,27 +82,24 @@
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
-  <component name="GitHubPullRequestSearchHistory">{
-  &quot;lastFilter&quot;: {
-    &quot;state&quot;: &quot;OPEN&quot;
+  <component name="GitHubPullRequestSearchHistory"><![CDATA[{
+  "lastFilter": {
+    "state": "OPEN",
+    "assignee": "ashendrade"
   }
-}</component>
-  <component name="GithubPullRequestsUISettings">{
-  &quot;selectedUrlAndAccountId&quot;: {
-    &quot;url&quot;: &quot;https://github.com/ashendrade/Tourism-Package-Customization-Platform.git&quot;,
-    &quot;accountId&quot;: &quot;2211df6e-401e-4113-96ab-f417cb7730da&quot;
+}]]></component>
+  <component name="GithubPullRequestsUISettings"><![CDATA[{
+  "selectedUrlAndAccountId": {
+    "url": "https://github.com/ashendrade/Tourism-Package-Customization-Platform",
+    "accountId": "dfca933e-2003-485d-ac7c-176d259d791b"
   }
-}</component>
+}]]></component>
   <component name="MavenImportPreferences">
     <option name="generalSettings">
       <MavenGeneralSettings>
         <option name="mavenHomeTypeForPersistence" value="WRAPPER" />
       </MavenGeneralSettings>
     </option>
-  </component>
-  <component name="McpProjectServerCommands">
-    <commands />
-    <urls />
   </component>
   <component name="ProjectColorInfo">{
   &quot;customColor&quot;: &quot;&quot;,
@@ -65,59 +110,28 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent">{
-  &quot;keyToString&quot;: {
-    &quot;Application.TouorismApplication.executor&quot;: &quot;Run&quot;,
-    &quot;Application.TourismApplication.executor&quot;: &quot;Run&quot;,
-    &quot;Maven.tourism [clean].executor&quot;: &quot;Run&quot;,
-    &quot;Maven.tourism [install,-DskipTests].executor&quot;: &quot;Run&quot;,
-    &quot;Maven.tourism [install].executor&quot;: &quot;Run&quot;,
-    &quot;ModuleVcsDetector.initialDetectionPerformed&quot;: &quot;true&quot;,
-    &quot;RunOnceActivity.MCP Project settings loaded&quot;: &quot;true&quot;,
-    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
-    &quot;RunOnceActivity.TerminalTabsStorage.copyFrom.TerminalArrangementManager.252&quot;: &quot;true&quot;,
-    &quot;RunOnceActivity.git.unshallow&quot;: &quot;true&quot;,
-    &quot;RunOnceActivity.typescript.service.memoryLimit.init&quot;: &quot;true&quot;,
-<<<<<<< HEAD
-    &quot;Spring Boot.TourismApplication.executor&quot;: &quot;Run&quot;,
-    &quot;com.intellij.ml.llm.matterhorn.ej.ui.settings.DefaultModelSelectionForGA.v1&quot;: &quot;true&quot;,
-    &quot;git-widget-placeholder&quot;: &quot;Booking-and-Payment-Component&quot;,
-    &quot;ignore.virus.scanning.warn.message&quot;: &quot;true&quot;,
-    &quot;junie.onboarding.icon.badge.shown&quot;: &quot;true&quot;,
-=======
-    &quot;git-widget-placeholder&quot;: &quot;pricingBudgetCalculation&quot;,
->>>>>>> e82e0b4a687f7bbe8b9dccb18ef6f700dfdd4bb0
-    &quot;kotlin-language-version-configured&quot;: &quot;true&quot;,
-    &quot;last_opened_file_path&quot;: &quot;C:/Users/USER/OneDrive/Desktop/Tourism-Package-Customization-Platform&quot;,
-    &quot;project.structure.last.edited&quot;: &quot;Modules&quot;,
-    &quot;project.structure.proportion&quot;: &quot;0.15&quot;,
-    &quot;project.structure.side.proportion&quot;: &quot;0.2&quot;,
-    &quot;settings.editor.selected.configurable&quot;: &quot;preferences.keymap&quot;,
-    &quot;to.speed.mode.migration.done&quot;: &quot;true&quot;,
-    &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
+  <component name="PropertiesComponent"><![CDATA[{
+  "keyToString": {
+    "Application.TourismApplication.executor": "Run",
+    "Maven.tourism [clean].executor": "Run",
+    "Maven.tourism [install].executor": "Run",
+    "RunOnceActivity.ShowReadmeOnStart": "true",
+    "RunOnceActivity.git.unshallow": "true",
+    "RunOnceActivity.typescript.service.memoryLimit.init": "true",
+    "Spring Boot.TourismApplication.executor": "Run",
+    "git-widget-placeholder": "main",
+    "kotlin-language-version-configured": "true",
+    "nodejs_package_manager_path": "npm",
+    "project.structure.last.edited": "Modules",
+    "project.structure.proportion": "0.0",
+    "project.structure.side.proportion": "0.0",
+    "settings.editor.selected.configurable": "project.propCompiler",
+    "vue.rearranger.settings.migration": "true"
   }
-}</component>
-  <component name="RecentsManager">
-    <key name="CopyFile.RECENT_KEYS">
-      <recent name="$PROJECT_DIR$/src/main/java/com/tourism/repository" />
-      <recent name="$PROJECT_DIR$/src/main" />
-      <recent name="$PROJECT_DIR$/src/main/java" />
-      <recent name="$PROJECT_DIR$/target/generated-sources" />
-      <recent name="$PROJECT_DIR$/target/generated-sources/annotations" />
-    </key>
-    <key name="MoveFile.RECENT_KEYS">
-      <recent name="C:\Users\USER\OneDrive\Desktop\Tourism-Package-Customization-Platform" />
-      <recent name="C:\Users\USER\OneDrive\Desktop\Tourism-Package-Customization-Platform\tourism\data" />
-    </key>
-  </component>
-  <component name="RunAnythingCache">
-    <option name="myCommands">
-      <command value="mvn install -DskipTests" />
-    </option>
-  </component>
+}]]></component>
   <component name="RunManager">
     <configuration name="TourismApplication" type="SpringBootApplicationConfigurationType" factoryName="Spring Boot" nameIsGenerated="true">
-      <module name="Tourism-Package-Customization-Platformj" />
+      <module name="tourism" />
       <option name="SPRING_BOOT_MAIN_CLASS" value="com.tourism.TourismApplication" />
       <method v="2">
         <option name="Make" enabled="true" />
@@ -127,7 +141,8 @@
   <component name="SharedIndexes">
     <attachedChunks>
       <set>
-        <option value="bundled-jdk-30f59d01ecdd-2fc7cc6b9a17-intellij.indexing.shared.core-IU-253.30387.90" />
+        <option value="bundled-jdk-30f59d01ecdd-2fc7cc6b9a17-intellij.indexing.shared.core-IU-253.32098.37" />
+        <option value="bundled-js-predefined-d6986cc7102b-9b0f141eb926-JavaScript-IU-253.32098.37" />
       </set>
     </attachedChunks>
   </component>
@@ -138,40 +153,11 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1774671597599</updated>
-      <workItem from="1774671598816" duration="1136000" />
-      <workItem from="1774743691431" duration="20000" />
-<<<<<<< HEAD
-      <workItem from="1776965811121" duration="69000" />
-=======
-<<<<<<< Updated upstream
-=======
-      <workItem from="1776965811121" duration="69000" />
-      <workItem from="1777807972166" duration="1850000" />
-      <workItem from="1778057754313" duration="4000" />
-      <workItem from="1778659216723" duration="1305000" />
->>>>>>> Stashed changes
->>>>>>> main
+      <workItem from="1778755959889" duration="1337000" />
     </task>
-    <task id="LOCAL-00001" summary="Banujan">
-      <option name="closed" value="true" />
-      <created>1777900741199</created>
-      <option name="number" value="00001" />
-      <option name="presentableId" value="LOCAL-00001" />
-      <option name="project" value="LOCAL" />
-      <updated>1777900741199</updated>
-    </task>
-    <option name="localTasksCounter" value="2" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
     <option name="version" value="3" />
-  </component>
-  <component name="VcsManagerConfiguration">
-    <MESSAGE value="Banujan" />
-    <option name="LAST_COMMIT_MESSAGE" value="Banujan" />
-  </component>
-  <component name="XSLT-Support.FileAssociations.UIState">
-    <expand />
-    <select />
   </component>
 </project>

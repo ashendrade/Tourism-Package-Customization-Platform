@@ -2,28 +2,24 @@
 <project version="4">
   <component name="CompilerConfiguration">
     <annotationProcessing>
-<<<<<<< HEAD
-      <profile default="true" name="Default" enabled="true" />
-=======
->>>>>>> e82e0b4a687f7bbe8b9dccb18ef6f700dfdd4bb0
-      <profile name="Maven default annotation processors profile" enabled="true">
+      <profile default="true" name="Default" enabled="true">
+        <processorPath useClasspath="false">
+          <entry name="$MAVEN_REPOSITORY$/org/projectlombok/lombok/1.18.30/lombok-1.18.30.jar" />
+        </processorPath>
+      </profile>
+      <profile name="Annotation profile for tourism" enabled="true">
         <sourceOutputDir name="target/generated-sources/annotations" />
         <sourceTestOutputDir name="target/generated-test-sources/test-annotations" />
         <outputRelativeToContentRoot value="true" />
-<<<<<<< HEAD
+        <processorPath useClasspath="false">
+          <entry name="$MAVEN_REPOSITORY$/org/projectlombok/lombok/1.18.30/lombok-1.18.30.jar" />
+        </processorPath>
         <module name="tourism" />
-=======
-        <module name="Tourism-Package-Customization-Platformj" />
->>>>>>> e82e0b4a687f7bbe8b9dccb18ef6f700dfdd4bb0
       </profile>
     </annotationProcessing>
-    <bytecodeTargetLevel target="17">
-      <module name="Tourism-Package-Customization-Platform" target="17" />
-    </bytecodeTargetLevel>
   </component>
   <component name="JavacSettings">
     <option name="ADDITIONAL_OPTIONS_OVERRIDE">
-      <module name="Tourism-Package-Customization-Platform" options="-parameters" />
       <module name="tourism" options="-parameters" />
     </option>
   </component>

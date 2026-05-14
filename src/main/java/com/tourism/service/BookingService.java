@@ -12,7 +12,7 @@ import java.util.stream.Collectors;
 @Service
 public class BookingService {
 
-    private final String FILE_PATH = "data/bookings.txt";
+    private final String FILE_PATH = "src/main/resources/data/bookings.txt";
 
     public Booking createBooking(Booking booking) throws IOException {
         FileHandler.appendLine(FILE_PATH, booking.toTextLine());

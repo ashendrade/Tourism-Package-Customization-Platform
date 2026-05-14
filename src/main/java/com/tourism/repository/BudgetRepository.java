@@ -10,7 +10,7 @@ import java.util.Scanner;
 
 @Repository
 public class BudgetRepository {
-    private static final String FILE_PATH = "pricing.txt";
+    private static final String FILE_PATH = "src/main/resources/data/quotes.txt";
     private static final String DELIMITER = "\\|";
 
     /**

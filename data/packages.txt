@@ -1,3 +1,0 @@
-P001,Tropical Paradise,Maldives,Luxury Resort,5
-P002,Mountain Escape,Swiss Alps,Chalet,7
-P003,City Lights,Tokyo,Business Hotel,4
