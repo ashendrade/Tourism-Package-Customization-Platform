@@ -7,7 +7,8 @@ import org.springframework.web.bind.annotation.*;
 import java.util.List;
 
 @RestController
-@RequestMapping("/packages")
+@CrossOrigin(origins = "*")
+@RequestMapping("/api/packages")
 public class PackageController {
 
     private final PackageService service;
@@ -29,5 +30,11 @@ public class PackageController {
     @DeleteMapping("/{id}")
     public String delete(@PathVariable String id) {
         return service.deletePackage(id);
+    }
+
+    @PutMapping("/{id}")
+    public String update(@PathVariable String id, @RequestBody TravelPackage pkg) {
+        pkg.setId(id); // Ensure the ID from path is used
+        return service.updatePackage(pkg);
     }
 }
