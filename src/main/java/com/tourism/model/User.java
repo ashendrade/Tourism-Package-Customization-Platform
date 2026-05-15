@@ -12,6 +12,8 @@ public abstract class User {
     private String username;
     private String password;
     private String role; // "TRAVELER" or "ADMIN"
+    private String fullName;
+    private String email;
 
     public abstract String getDashboardUrl();
 }

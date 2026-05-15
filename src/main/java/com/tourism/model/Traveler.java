@@ -6,7 +6,7 @@ import lombok.NoArgsConstructor;
 public class Traveler extends User {
     
     public Traveler(String id, String username, String password) {
-        super(id, username, password, "TRAVELER");
+        super(id, username, password, "TRAVELER", "", "");
     }
 
     @Override

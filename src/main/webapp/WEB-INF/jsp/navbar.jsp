@@ -25,6 +25,7 @@
                 <c:choose>
                     <c:when test="${not empty sessionScope.user}">
                         <span class="welcome-text">Welcome, ${sessionScope.user.username}</span>
+                        <a href="/profile" class="btn-logout" style="border-color: #278282; color: #278282;">Profile</a>
                         <a href="/logout" class="btn-logout">Logout</a>
                     </c:when>
                     <c:otherwise>
