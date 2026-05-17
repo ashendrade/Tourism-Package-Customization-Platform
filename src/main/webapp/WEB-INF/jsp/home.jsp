@@ -253,6 +253,127 @@
             transform: scale(1.05);
             box-shadow: 0 10px 20px rgba(0,0,0,0.2);
         }
+
+        /* Search Widget Styles */
+        .search-widget-card {
+            background: #ffffff;
+            border-radius: 12px;
+            box-shadow: 0 15px 35px rgba(0, 0, 0, 0.15);
+            max-width: 800px;
+            width: 90%;
+            margin: 40px auto 0 auto;
+            overflow: hidden;
+            text-align: left;
+            border-top: 5px solid #278282;
+        }
+
+        .search-tabs {
+            display: flex;
+            background: #f8fafc;
+            border-bottom: 1px solid #e2e8f0;
+        }
+
+        .search-tab {
+            flex: 1;
+            padding: 15px 20px;
+            text-align: center;
+            font-weight: 600;
+            font-size: 0.95rem;
+            color: #64748b;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            border-bottom: 3px solid transparent;
+        }
+
+        .search-tab:hover {
+            color: #278282;
+            background: rgba(39, 130, 130, 0.05);
+        }
+
+        .search-tab.active {
+            color: #278282;
+            border-bottom-color: #278282;
+            background: #ffffff;
+        }
+
+        .search-tab i {
+            margin-right: 8px;
+        }
+
+        .search-content-pane {
+            padding: 30px;
+            display: none;
+        }
+
+        .search-content-pane.active {
+            display: block;
+        }
+
+        .search-widget-form {
+            display: flex;
+            align-items: flex-end;
+            gap: 20px;
+            flex-wrap: wrap;
+        }
+
+        .search-form-group {
+            flex: 2;
+            min-width: 200px;
+            display: flex;
+            flex-direction: column;
+            gap: 8px;
+        }
+
+        .search-form-group label {
+            font-size: 0.85rem;
+            font-weight: 600;
+            color: #278282;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+
+        .search-form-group select,
+        .search-form-group input {
+            width: 100%;
+            padding: 12px 15px;
+            border: 2px solid #e2e8f0;
+            border-radius: 8px;
+            font-family: inherit;
+            font-size: 0.95rem;
+            color: #334155;
+            background-color: #ffffff;
+            transition: border-color 0.3s ease;
+        }
+
+        .search-form-group select:focus,
+        .search-form-group input:focus {
+            outline: none;
+            border-color: #278282;
+        }
+
+        .search-submit-btn {
+            flex: 1;
+            min-width: 180px;
+            padding: 14px 25px;
+            background-color: #278282;
+            color: #ffffff;
+            border: none;
+            border-radius: 8px;
+            font-size: 0.95rem;
+            font-weight: 700;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 8px;
+        }
+
+        .search-submit-btn:hover {
+            background-color: #1f6b6b;
+            transform: translateY(-2px);
+            box-shadow: 0 4px 10px rgba(39, 130, 130, 0.2);
+        }
     </style>
 </head>
 
@@ -261,9 +382,73 @@
     <jsp:include page="navbar.jsp" />
 
     <div class="hero-section">
-        <div class="hero-content">
+        <div class="hero-content" style="width: 100%; max-width: 900px; padding: 0 20px;">
             <p>Let's Travel the world with us</p>
-            <h1>DISCOVER THE WORLD WITH OUR GUIDE</h1>
+            <h1 style="margin-bottom: 20px;">DISCOVER THE WORLD WITH OUR GUIDE</h1>
+            
+            <!-- Clean, solid green and white search card overlay -->
+            <div class="search-widget-card">
+                <div class="search-tabs">
+                    <div class="search-tab active" data-target="customize-pane">
+                        <i class="fas fa-magic"></i>Customize Trip
+                    </div>
+                    <div class="search-tab" data-target="theme-pane">
+                        <i class="fas fa-compass"></i>Find by Theme
+                    </div>
+                    <div class="search-tab" data-target="budget-pane">
+                        <i class="fas fa-wallet"></i>Find by Budget
+                    </div>
+                </div>
+                
+                <!-- Tab 1: Customize Dynamic Destination -->
+                <div id="customize-pane" class="search-content-pane active">
+                    <form action="${pageContext.request.contextPath}/packages/customize" method="GET" class="search-widget-form">
+                        <div class="search-form-group">
+                            <label for="destSelect"><i class="fas fa-map-marker-alt"></i> Select Destination</label>
+                            <select name="destinationId" id="destSelect" required>
+                                <option value="" disabled selected>Where would you like to go?</option>
+                                <c:forEach var="dest" items="${destinations}">
+                                    <option value="${dest.destinationId}">${dest.destinationName} (${dest.city}, ${dest.country})</option>
+                                </c:forEach>
+                            </select>
+                        </div>
+                        <button type="submit" class="search-submit-btn">
+                            <i class="fas fa-sliders-h"></i> Customize Now
+                        </button>
+                    </form>
+                </div>
+                
+                <!-- Tab 2: Package Type / Theme -->
+                <div id="theme-pane" class="search-content-pane">
+                    <form action="${pageContext.request.contextPath}/destinations/search/package" method="GET" class="search-widget-form">
+                        <div class="search-form-group">
+                            <label for="themeSelect"><i class="fas fa-hiking"></i> Select Travel Theme</label>
+                            <select name="packageType" id="themeSelect" required>
+                                <option value="Adventure">Adventure</option>
+                                <option value="Religious">Religious</option>
+                                <option value="Coastal">Coastal</option>
+                                <option value="Nightlife">Nightlife</option>
+                              </select>
+                        </div>
+                        <button type="submit" class="search-submit-btn">
+                            <i class="fas fa-search"></i> Search Themes
+                        </button>
+                    </form>
+                </div>
+                
+                <!-- Tab 3: Budget Range -->
+                <div id="budget-pane" class="search-content-pane">
+                    <form action="${pageContext.request.contextPath}/destinations/search/budget" method="GET" class="search-widget-form">
+                        <div class="search-form-group">
+                            <label for="budgetInput"><i class="fas fa-money-bill-wave"></i> Maximum Budget (Rs.)</label>
+                            <input type="number" name="budget" id="budgetInput" placeholder="Enter maximum budget..." min="1" required>
+                        </div>
+                        <button type="submit" class="search-submit-btn">
+                            <i class="fas fa-search-dollar"></i> Search Budget
+                        </button>
+                    </form>
+                </div>
+            </div>
         </div>
     </div>
 
@@ -370,6 +555,22 @@
 
     <jsp:include page="footer.jsp" />
 
+    <script>
+        document.querySelectorAll('.search-tab').forEach(tab => {
+            tab.addEventListener('click', () => {
+                // Remove active classes from all tabs and panes
+                document.querySelectorAll('.search-tab').forEach(t => t.classList.remove('active'));
+                document.querySelectorAll('.search-content-pane').forEach(p => p.classList.remove('active'));
+                
+                // Add active class to the clicked tab
+                tab.classList.add('active');
+                
+                // Show the corresponding content pane
+                const targetId = tab.getAttribute('data-target');
+                document.getElementById(targetId).classList.add('active');
+            });
+        });
+    </script>
 </body>
 
 </html>

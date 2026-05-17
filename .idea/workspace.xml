@@ -6,11 +6,9 @@
   <component name="ChangeListManager">
     <list default="true" id="01f5e971-f1b3-4130-b055-5d06be971329" name="Changes" comment="Banujan">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/tourism/model/Admin.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/tourism/model/Admin.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/tourism/model/Traveler.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/tourism/model/Traveler.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/tourism/model/User.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/tourism/model/User.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/tourism/repository/UserRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/tourism/repository/UserRepository.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/webapp/WEB-INF/jsp/navbar.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/WEB-INF/jsp/navbar.jsp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.m2/repository/org/springframework/boot/spring-boot-starter-parent/3.2.5/spring-boot-starter-parent-3.2.5.pom.lastUpdated" beforeDir="false" afterPath="$PROJECT_DIR$/.m2/repository/org/springframework/boot/spring-boot-starter-parent/3.2.5/spring-boot-starter-parent-3.2.5.pom.lastUpdated" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/tourism/controller/HomeController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/tourism/controller/HomeController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/WEB-INF/jsp/home.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/WEB-INF/jsp/home.jsp" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -104,6 +102,9 @@
       <updated>1774671597599</updated>
       <workItem from="1778755959889" duration="9760000" />
       <workItem from="1778818703389" duration="254000" />
+      <workItem from="1778951642288" duration="1448000" />
+      <workItem from="1778987264676" duration="1181000" />
+      <workItem from="1779024191155" duration="568000" />
     </task>
     <servers />
   </component>
