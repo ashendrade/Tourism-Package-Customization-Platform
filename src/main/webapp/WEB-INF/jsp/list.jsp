@@ -135,7 +135,14 @@
             <div class="col-md-4 mb-4">
                 <div class="dest-card">
                     <div class="dest-img">
-                        <i class="fas fa-map-marked-alt"></i>
+                        <c:choose>
+                            <c:when test="${not empty dest.imageUrl}">
+                                <img src="${pageContext.request.contextPath}/img/${dest.imageUrl}" alt="${dest.destinationName}" style="width: 100%; height: 100%; object-fit: cover;">
+                            </c:when>
+                            <c:otherwise>
+                                <i class="fas fa-map-marked-alt"></i>
+                            </c:otherwise>
+                        </c:choose>
                     </div>
                     <div class="dest-body">
                         <div class="d-flex justify-content-between align-items-center mb-2">

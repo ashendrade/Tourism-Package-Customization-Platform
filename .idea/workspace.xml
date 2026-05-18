@@ -6,9 +6,11 @@
   <component name="ChangeListManager">
     <list default="true" id="01f5e971-f1b3-4130-b055-5d06be971329" name="Changes" comment="Banujan">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.m2/repository/org/springframework/boot/spring-boot-starter-parent/3.2.5/spring-boot-starter-parent-3.2.5.pom.lastUpdated" beforeDir="false" afterPath="$PROJECT_DIR$/.m2/repository/org/springframework/boot/spring-boot-starter-parent/3.2.5/spring-boot-starter-parent-3.2.5.pom.lastUpdated" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/tourism/controller/HomeController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/tourism/controller/HomeController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/webapp/WEB-INF/jsp/home.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/WEB-INF/jsp/home.jsp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/tourism/TourismApplication.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/tourism/TourismApplication.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/data/destinations.txt" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/data/destinations.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/data/reviews.txt" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/data/reviews.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/data/users.txt" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/data/users.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/WEB-INF/jsp/list.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/WEB-INF/jsp/list.jsp" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -104,11 +106,22 @@
       <workItem from="1778818703389" duration="254000" />
       <workItem from="1778951642288" duration="1448000" />
       <workItem from="1778987264676" duration="1181000" />
-      <workItem from="1779024191155" duration="568000" />
+      <workItem from="1779024191155" duration="6830000" />
     </task>
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
     <option name="version" value="3" />
+  </component>
+  <component name="XDebuggerManager">
+    <breakpoint-manager>
+      <breakpoints>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/main/webapp/WEB-INF/jsp/navbar.jsp</url>
+          <line>42</line>
+          <option name="timeStamp" value="1" />
+        </line-breakpoint>
+      </breakpoints>
+    </breakpoint-manager>
   </component>
 </project>
