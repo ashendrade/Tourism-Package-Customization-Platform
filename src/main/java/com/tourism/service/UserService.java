@@ -16,6 +16,10 @@ public class UserService {
     private UserRepository userRepository;
 
     public boolean register(String username, String password, String role) {
+        return register(username, password, role, "", "");
+    }
+
+    public boolean register(String username, String password, String role, String fullName, String email) {
         if (userRepository.findByUsername(username) != null) {
             return false;
         }
@@ -26,6 +30,8 @@ public class UserService {
         } else {
             user = new Traveler(id, username, password);
         }
+        user.setFullName(fullName);
+        user.setEmail(email);
         userRepository.saveUser(user);
         return true;
     }
@@ -36,5 +42,21 @@ public class UserService {
             return user;
         }
         return null;
+    }
+
+    public java.util.List<User> getAllUsers() {
+        return userRepository.getAllUsers();
+    }
+
+    public User getUserById(String id) {
+        return userRepository.findById(id);
+    }
+
+    public void updateUser(User user) {
+        userRepository.updateUser(user);
+    }
+
+    public void deleteUser(String id) {
+        userRepository.deleteUser(id);
     }
 }

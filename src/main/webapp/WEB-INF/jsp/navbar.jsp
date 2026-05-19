@@ -12,6 +12,7 @@
                 <c:if test="${sessionScope.user.role == 'ADMIN'}">
                     <li><a href="${pageContext.request.contextPath}/admin/destinations">Manage Destinations</a></li>
                     <li><a href="${pageContext.request.contextPath}/admin/bookings">All Bookings</a></li>
+                    <li><a href="${pageContext.request.contextPath}/admin/users">Manage Users</a></li>
                     <li><a href="${pageContext.request.contextPath}/budget">Finance</a></li>
                 </c:if>
                 <c:if test="${sessionScope.user.role == 'TRAVELER'}">

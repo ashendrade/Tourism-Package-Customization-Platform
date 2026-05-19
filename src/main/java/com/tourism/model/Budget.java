@@ -1,9 +1,6 @@
 package com.tourism.model;
 
-/**
- * Model class for Budget/Pricing.
- * Represents the cost breakdown of a travel package.
- */
+
 public class Budget {
     private String packageId;
     private double basePrice;

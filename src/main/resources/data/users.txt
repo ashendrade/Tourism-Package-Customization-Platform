@@ -3,5 +3,5 @@
 463xu5u8,Banujan,IT25103287,TRAVELER,,
 2plybdja,Dhanishiyan,IT25101436,TRAVELER,,
 1frkgytx,admin,ADMIN,ADMIN,,
-75e7f331,Ashendra,IT25101841,TRAVELER,Ashendra De Siva,it25101841@my.sliit.lk
+75e7f331,Ashendra,IT25101841,TRAVELER,Ashendra De Silva,it25101841@my.sliit.lk
 05953424,Shehani,IT25101086,TRAVELER,,

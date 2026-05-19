@@ -4,3 +4,5 @@ PKG231041,Custom Paradise Tour,Tropical Paradise,Standard,5,Standard Tour,,Stand
 PKG871826,Custom Safari Wonders Tour,Safari Wonders,Standard,5,,,Standard,ashendra
 PKG403436,Custom Tropical Paradise Tour,Tropical Paradise,Standard,5,,,Standard,Ashendra
 PKG993835,Custom Tropical Paradise Tour,Tropical Paradise,Standard,5,City Walking Tour; Adventure Trekking,,Standard,Ashendra
+PKG867898,Custom Tropical Paradise Tour,Tropical Paradise,Standard,5,City Walking Tour,,Standard,Sahan
+PKG805931,Custom Alpine Adventure Tour,Alpine Adventure,Standard,5,,,Standard,Shehani

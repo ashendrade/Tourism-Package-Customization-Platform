@@ -65,7 +65,7 @@ public class UserRepository {
         List<User> allUsers = getAllUsers();
         try (BufferedWriter writer = new BufferedWriter(new FileWriter(FILE_PATH))) {
             for (User u : allUsers) {
-                if (u.getUsername().equals(updatedUser.getUsername())) {
+                if (u.getId().equals(updatedUser.getId())) {
                     u = updatedUser;
                 }
                 writer.write(String.format("%s,%s,%s,%s,%s,%s",
@@ -77,6 +77,31 @@ public class UserRepository {
         } catch (IOException e) {
             e.printStackTrace();
         }
+    }
+
+    public void deleteUser(String id) {
+        List<User> allUsers = getAllUsers();
+        try (BufferedWriter writer = new BufferedWriter(new FileWriter(FILE_PATH))) {
+            for (User u : allUsers) {
+                if (u.getId().equals(id)) {
+                    continue;
+                }
+                writer.write(String.format("%s,%s,%s,%s,%s,%s",
+                    u.getId(), u.getUsername(), u.getPassword(), u.getRole(),
+                    u.getFullName() != null ? u.getFullName() : "",
+                    u.getEmail() != null ? u.getEmail() : ""));
+                writer.newLine();
+            }
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+    }
+
+    public User findById(String id) {
+        return getAllUsers().stream()
+                .filter(u -> u.getId().equals(id))
+                .findFirst()
+                .orElse(null);
     }
 
     public User findByUsername(String username) {

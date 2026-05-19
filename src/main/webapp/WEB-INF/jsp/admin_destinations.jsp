@@ -7,6 +7,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Manage Destinations - Admin Panel</title>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <style>
         body { background: #f8fafc; font-family: 'Poppins', sans-serif; }
         .page-header { background: #278282; color: white; padding: 40px 0; margin-bottom: 30px; }
@@ -71,13 +72,14 @@
         <!-- List Table -->
         <div class="col-md-8">
             <div class="admin-card">
-                <table class="table align-middle">
-                    <thead>
+                <table class="table table-hover align-middle">
+                    <thead class="table-light">
                         <tr>
                             <th>Name</th>
                             <th>Country</th>
                             <th>Price</th>
                             <th>Type</th>
+                            <th class="text-end">Actions</th>
                         </tr>
                     </thead>
                     <tbody>
@@ -87,6 +89,14 @@
                                 <td>${dest.country}</td>
                                 <td>Rs. ${dest.price}</td>
                                 <td><span class="badge bg-info text-dark">${dest.packageType}</span></td>
+                                <td class="text-end">
+                                    <a href="${pageContext.request.contextPath}/admin/destinations/edit/${dest.destinationId}" class="btn btn-sm btn-outline-primary me-2">
+                                        <i class="fas fa-edit me-1"></i> Edit
+                                    </a>
+                                    <a href="${pageContext.request.contextPath}/admin/destinations/delete/${dest.destinationId}" class="btn btn-sm btn-outline-danger" onclick="return confirm('Are you sure you want to delete this destination?')">
+                                        <i class="fas fa-trash-alt me-1"></i> Delete
+                                    </a>
+                                </td>
                             </tr>
                         </c:forEach>
                     </tbody>
