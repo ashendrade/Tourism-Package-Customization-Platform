@@ -123,7 +123,7 @@ public class AdminController {
 
     @PostMapping("/users/update/{id}")
     public String updateUser(@PathVariable String id, @RequestParam String username,
-                             @RequestParam String password, @RequestParam String role,
+                             @RequestParam(required = false) String password, @RequestParam String role,
                              @RequestParam(required = false) String fullName,
                              @RequestParam(required = false) String email, HttpSession session,
                              RedirectAttributes redirectAttributes) {
@@ -131,7 +131,9 @@ public class AdminController {
         User user = userService.getUserById(id);
         if (user != null) {
             user.setUsername(username);
-            user.setPassword(password);
+            if (password != null && !password.trim().isEmpty()) {
+                user.setPassword(password);
+            }
             user.setRole(role);
             user.setFullName(fullName);
             user.setEmail(email);

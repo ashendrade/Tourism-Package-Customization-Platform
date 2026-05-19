@@ -16,6 +16,12 @@ public class ProfileController {
     @Autowired
     private UserRepository userRepository;
 
+    @Autowired
+    private com.tourism.service.PackageService packageService;
+
+    @Autowired
+    private com.tourism.service.BookingService bookingService;
+
     @GetMapping("/profile")
     public String viewProfile(HttpSession session, Model model) {
         User user = (User) session.getAttribute("user");
@@ -47,5 +53,46 @@ public class ProfileController {
         session.setAttribute("user", user);
         
         return "redirect:/profile?success=true";
+    }
+
+    @PostMapping("/profile/delete")
+    public String deleteAccount(HttpSession session, org.springframework.web.servlet.mvc.support.RedirectAttributes redirectAttributes) {
+        User user = (User) session.getAttribute("user");
+        if (user == null) return "redirect:/login";
+
+        String username = user.getUsername();
+
+        // 1. Delete associated customized packages
+        try {
+            packageService.getAllPackages().stream()
+                .filter(pkg -> username.equalsIgnoreCase(pkg.getUserId()))
+                .forEach(pkg -> packageService.deletePackage(pkg.getId()));
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
+
+        // 2. Delete associated bookings
+        try {
+            bookingService.getAllBookings().stream()
+                .filter(b -> username.equalsIgnoreCase(b.getUserId()))
+                .forEach(b -> {
+                    try {
+                        bookingService.deleteBooking(b.getId());
+                    } catch (Exception ex) {
+                        ex.printStackTrace();
+                    }
+                });
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
+
+        // 3. Delete user account
+        userRepository.deleteUser(user.getId());
+
+        // 4. Invalidate session
+        session.invalidate();
+
+        redirectAttributes.addFlashAttribute("successMessage", "✅ Your account and all associated bookings have been successfully deleted. We are sorry to see you go!");
+        return "redirect:/login";
     }
 }

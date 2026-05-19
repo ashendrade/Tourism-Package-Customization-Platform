@@ -68,6 +68,20 @@
                     <button type="submit" class="btn btn-update">Update Profile</button>
                 </div>
             </form>
+
+            <hr class="my-5">
+
+            <div class="card border-danger bg-light">
+                <div class="card-body">
+                    <h5 class="card-title text-danger fw-bold"><i class="fas fa-exclamation-triangle me-2"></i>Danger Zone</h5>
+                    <p class="card-text text-muted small">Once you delete your account, there is no going back. All of your customized travel packages, active bookings, and profile settings will be permanently lost.</p>
+                    <form action="${pageContext.request.contextPath}/profile/delete" method="POST" onsubmit="return confirm('⚠️ WARNING: Are you absolutely sure you want to permanently delete your account? This action is irreversible and all your bookings will be deleted.')">
+                        <button type="submit" class="btn btn-outline-danger">
+                            <i class="fas fa-trash-alt me-1"></i> Delete My Account
+                        </button>
+                    </form>
+                </div>
+            </div>
         </div>
     </div>
 </div>

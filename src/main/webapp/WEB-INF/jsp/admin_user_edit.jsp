@@ -50,7 +50,7 @@
 
             <div class="mb-3">
                 <label class="form-label fw-semibold"><i class="fas fa-lock text-secondary me-2"></i>Password</label>
-                <input type="text" name="password" class="form-control" value="${targetUser.password}" required>
+                <input type="password" name="password" class="form-control" placeholder="Enter new password to change, or leave blank to keep current">
             </div>
 
             <div class="mb-3">

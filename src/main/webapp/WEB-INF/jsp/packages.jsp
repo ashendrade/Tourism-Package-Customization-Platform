@@ -87,9 +87,16 @@
                         <span class="me-3"><i class="fas fa-map-pin me-2"></i>${pkg.destination}</span>
                         <span><i class="fas fa-clock me-2"></i>${pkg.duration} Days</span>
                     </div>
-                    <div class="d-flex justify-content-between align-items-center">
-                        <small class="text-muted">ID: ${pkg.id}</small>
-                        <a href="${pageContext.request.contextPath}/packages/customize?destinationId=${pkg.destination}" class="btn-modify">Modify</a>
+                    <div class="d-flex justify-content-between align-items-center mt-3">
+                        <small class="text-muted">ID: <code>#${pkg.id}</code></small>
+                        <div>
+                            <a href="${pageContext.request.contextPath}/packages/edit/${pkg.id}" class="btn btn-sm btn-outline-primary me-2">
+                                <i class="fas fa-edit me-1"></i> Edit
+                            </a>
+                            <a href="${pageContext.request.contextPath}/packages/delete/${pkg.id}" class="btn btn-sm btn-outline-danger" onclick="return confirm('Are you sure you want to permanently delete this customized package and its associated booking?')">
+                                <i class="fas fa-trash-alt me-1"></i> Delete
+                            </a>
+                        </div>
                     </div>
                 </div>
             </div>

@@ -23,6 +23,9 @@ public class TravelPackageController {
     private com.tourism.service.BookingService bookingService;
 
     @Autowired
+    private com.tourism.repository.BudgetRepository budgetRepository;
+
+    @Autowired
     private jakarta.servlet.http.HttpSession session;
 
     @GetMapping({"", "/list"})
@@ -84,5 +87,126 @@ public class TravelPackageController {
         }
         
         return "redirect:/bookings/my-bookings";
+    }
+
+    @GetMapping("/edit/{id}")
+    public String showEditPackagePage(@PathVariable String id, Model model) {
+        com.tourism.model.User user = (com.tourism.model.User) session.getAttribute("user");
+        if (user == null) {
+            return "redirect:/login";
+        }
+        
+        TravelPackage pkg = packageService.getPackageById(id);
+        if (pkg == null) {
+            return "redirect:/packages";
+        }
+        
+        // Authorization check: travelers can only edit their own packages; admins can edit all
+        if ("TRAVELER".equalsIgnoreCase(user.getRole()) && !user.getUsername().equalsIgnoreCase(pkg.getUserId())) {
+            return "redirect:/packages";
+        }
+        
+        // Fetch base price of the destination to compute live prices in JSP
+        Destination destination = destinationService.viewAllDestinations().stream()
+                .filter(d -> d.getDestinationName().equalsIgnoreCase(pkg.getDestination()))
+                .findFirst()
+                .orElse(null);
+        
+        model.addAttribute("pkg", pkg);
+        model.addAttribute("destination", destination);
+        return "edit_package";
+    }
+
+    @PostMapping("/update/{id}")
+    public String updatePackage(@PathVariable String id, @ModelAttribute TravelPackage updatedPkg) {
+        com.tourism.model.User user = (com.tourism.model.User) session.getAttribute("user");
+        if (user == null) {
+            return "redirect:/login";
+        }
+        
+        TravelPackage existingPkg = packageService.getPackageById(id);
+        if (existingPkg == null) {
+            return "redirect:/packages";
+        }
+        
+        if ("TRAVELER".equalsIgnoreCase(user.getRole()) && !user.getUsername().equalsIgnoreCase(existingPkg.getUserId())) {
+            return "redirect:/packages";
+        }
+        
+        updatedPkg.setId(id);
+        updatedPkg.setUserId(existingPkg.getUserId()); // Keep original owner
+        packageService.updatePackage(updatedPkg);
+        
+        // Sync the matching Booking price, hotel tier, and duration
+        try {
+            com.tourism.model.Booking booking = bookingService.getAllBookings().stream()
+                .filter(b -> b.getPackageId().equals(id))
+                .findFirst()
+                .orElse(null);
+            
+            if (booking != null) {
+                booking.setHotelTier(updatedPkg.getHotelTier());
+                booking.setDuration(updatedPkg.getDuration());
+                
+                // Fetch updated budget total
+                double updatedPrice = budgetRepository.readAllBudgets().stream()
+                    .filter(b -> b.getPackageId().equals(id))
+                    .map(com.tourism.model.Budget::getTotalPrice)
+                    .findFirst()
+                    .orElse(booking.getPrice());
+                booking.setPrice(updatedPrice);
+                
+                // Rewrite all bookings with updated data
+                java.util.List<com.tourism.model.Booking> allBookings = bookingService.getAllBookings();
+                java.util.List<String> lines = new java.util.ArrayList<>();
+                for (com.tourism.model.Booking b : allBookings) {
+                    if (b.getId().equals(booking.getId())) {
+                        lines.add(booking.toTextLine());
+                    } else {
+                        lines.add(b.toTextLine());
+                    }
+                }
+                com.tourism.util.FileHandler.writeLines("src/main/resources/data/bookings.txt", lines);
+            }
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
+        
+        return "redirect:/packages";
+    }
+
+    @GetMapping("/delete/{id}")
+    public String deletePackage(@PathVariable String id) {
+        com.tourism.model.User user = (com.tourism.model.User) session.getAttribute("user");
+        if (user == null) {
+            return "redirect:/login";
+        }
+        
+        TravelPackage existingPkg = packageService.getPackageById(id);
+        if (existingPkg == null) {
+            return "redirect:/packages";
+        }
+        
+        if ("TRAVELER".equalsIgnoreCase(user.getRole()) && !user.getUsername().equalsIgnoreCase(existingPkg.getUserId())) {
+            return "redirect:/packages";
+        }
+        
+        packageService.deletePackage(id);
+        
+        // Automatically delete the matching Booking for a clean cascading delete
+        try {
+            com.tourism.model.Booking booking = bookingService.getAllBookings().stream()
+                .filter(b -> b.getPackageId().equals(id))
+                .findFirst()
+                .orElse(null);
+            
+            if (booking != null) {
+                bookingService.deleteBooking(booking.getId());
+            }
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
+        
+        return "redirect:/packages";
     }
 }

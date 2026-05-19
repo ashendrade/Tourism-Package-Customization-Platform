@@ -102,9 +102,27 @@ public class PackageService {
             }
         }
         if (found) {
+            // Fetch base price
+            List<Destination> destinations = destinationFileHandler.getAllDestinations();
+            double basePrice = destinations.stream()
+                    .filter(d -> d.getDestinationName().equalsIgnoreCase(updatedPkg.getDestination()))
+                    .map(Destination::getPrice)
+                    .findFirst()
+                    .orElse(0.0);
+            
+            // Recalculate price and update quote
+            calculatePrice(updatedPkg.getId(), basePrice, 0, updatedPkg.getHotelType());
+            
             packageRepository.rewrite(list);
             return "Package updated";
         }
         return "Package not found";
+    }
+
+    public TravelPackage getPackageById(String id) {
+        return getAllPackages().stream()
+                .filter(pkg -> pkg.getId().equals(id))
+                .findFirst()
+                .orElse(null);
     }
 }
