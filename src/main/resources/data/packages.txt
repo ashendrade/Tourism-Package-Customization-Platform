@@ -6,3 +6,4 @@ PKG403436,Custom Tropical Paradise Tour,Tropical Paradise,Standard,5,,,Standard,
 PKG993835,Custom Tropical Paradise Tour,Tropical Paradise,Standard,5,City Walking Tour; Adventure Trekking,,Standard,Ashendra
 PKG867898,Custom Tropical Paradise Tour,Tropical Paradise,Standard,5,City Walking Tour,,Standard,Sahan
 PKG805931,Custom Alpine Adventure Tour,Alpine Adventure,Standard,5,,,Standard,Shehani
+PKG749546,Custom Alpine Adventure Tour,Alpine Adventure,Standard,5,,,Standard,Ashendra
