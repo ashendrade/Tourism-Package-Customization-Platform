@@ -103,6 +103,23 @@ public class BudgetRepository {
         }
     }
 
+    /**
+     * Deletes a budget record from the text file.
+     */
+    public void deleteBudgetRecord(String packageId) {
+        List<Budget> budgets = readAllBudgets();
+        try (BufferedWriter writer = new BufferedWriter(new FileWriter(FILE_PATH))) {
+            for (Budget b : budgets) {
+                if (!b.getPackageId().equalsIgnoreCase(packageId)) {
+                    writer.write(formatBudget(b));
+                    writer.newLine();
+                }
+            }
+        } catch (IOException e) {
+            System.err.println("Error deleting from file: " + e.getMessage());
+        }
+    }
+
     private String formatBudget(Budget b) {
         return String.format("%s|%.2f|%.2f|%.2f|%.2f|%.2f|%.2f|%s",
             b.getPackageId(),

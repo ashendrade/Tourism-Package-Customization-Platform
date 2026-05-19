@@ -64,20 +64,30 @@
 </div>
 
 <div class="container">
+    <c:if test="${not empty successMessage}">
+        <div class="alert alert-success border-0 mb-4 shadow-sm alert-dismissible fade show" role="alert" style="background: #dcfce7; color: #166534;">
+            <i class="fas fa-check-circle me-2"></i> ${successMessage}
+            <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+        </div>
+    </c:if>
+
     <div class="content-card">
         <h4 class="mb-4">Quick Calculation</h4>
-        <form action="/calculate-budget" method="POST" class="mb-5">
+        <form action="${pageContext.request.contextPath}/calculate-budget" method="POST" class="mb-5">
             <div class="row g-3">
-                <div class="col-md-3">
+                <div class="col-md-2">
                     <input type="text" name="packageId" class="form-control" placeholder="Package ID" required>
                 </div>
                 <div class="col-md-3">
-                    <input type="number" step="0.01" name="basePrice" class="form-control" placeholder="Base Price" required>
+                    <input type="number" step="0.01" name="basePrice" class="form-control" placeholder="Base Cost (Rs.)" required>
                 </div>
                 <div class="col-md-3">
+                    <input type="number" step="0.01" name="customAddons" class="form-control" placeholder="Customization Cost (Rs.)">
+                </div>
+                <div class="col-md-2">
                     <input type="number" step="0.01" name="tax" class="form-control" placeholder="Tax (Rs.)">
                 </div>
-                <div class="col-md-3">
+                <div class="col-md-2">
                     <select name="paymentPlan" class="form-select">
                         <option value="One-time">One-time</option>
                         <option value="Installments">Installments</option>
@@ -102,6 +112,7 @@
                         <th>Meals (Est.)</th>
                         <th>Plan</th>
                         <th>Total</th>
+                        <th class="text-end">Actions</th>
                     </tr>
                 </thead>
                 <tbody>
@@ -115,6 +126,14 @@
                             <td><fmt:formatNumber value="${budget.estimatedMeals}" pattern="#,##0.00"/></td>
                             <td><span class="plan-badge">${budget.paymentPlan}</span></td>
                             <td class="price-badge">Rs. <fmt:formatNumber value="${budget.totalPrice}" pattern="#,##0.00"/></td>
+                            <td class="text-end">
+                                <a href="${pageContext.request.contextPath}/admin/budgets/edit/${budget.packageId}" class="btn btn-sm btn-outline-primary me-2">
+                                    <i class="fas fa-edit"></i> Edit
+                                </a>
+                                <a href="${pageContext.request.contextPath}/admin/budgets/delete/${budget.packageId}" class="btn btn-sm btn-outline-danger" onclick="return confirm('Are you sure you want to permanently delete this pricing budget?')">
+                                    <i class="fas fa-trash-alt"></i> Delete
+                                </a>
+                            </td>
                         </tr>
                     </c:forEach>
                 </tbody>

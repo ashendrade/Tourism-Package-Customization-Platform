@@ -13,7 +13,7 @@
                     <li><a href="${pageContext.request.contextPath}/admin/destinations">Manage Destinations</a></li>
                     <li><a href="${pageContext.request.contextPath}/admin/bookings">All Bookings</a></li>
                     <li><a href="${pageContext.request.contextPath}/admin/users">Manage Users</a></li>
-                    <li><a href="${pageContext.request.contextPath}/budget">Finance</a></li>
+                    <li><a href="${pageContext.request.contextPath}/budget">Pricing & Budget</a></li>
                 </c:if>
                 <c:if test="${sessionScope.user.role == 'TRAVELER'}">
                     <li><a href="${pageContext.request.contextPath}/packages">My Packages</a></li>
@@ -50,12 +50,12 @@
     }
 
     .container-nav {
-        max-width: 1300px;
+        max-width: 1400px;
         margin: 0 auto;
         display: flex;
         justify-content: space-between;
         align-items: center;
-        padding: 0 40px;
+        padding: 0 20px;
     }
 
     .logo img {
@@ -66,7 +66,7 @@
     .main-nav {
         display: flex;
         align-items: center;
-        gap: 40px;
+        gap: 15px;
     }
 
     .nav-links {
@@ -74,15 +74,16 @@
         list-style: none;
         margin: 0;
         padding: 0;
-        gap: 25px;
+        gap: 15px;
     }
 
     .nav-links a {
         color: #333333;
         text-decoration: none;
-        font-size: 0.95rem;
+        font-size: 0.9rem;
         font-weight: 500;
         transition: color 0.3s;
+        white-space: nowrap;
     }
 
     .nav-links a:hover {
@@ -92,13 +93,15 @@
     .auth-links {
         display: flex;
         align-items: center;
-        gap: 20px;
+        gap: 12px;
         color: #333333;
+        white-space: nowrap;
     }
 
     .welcome-text {
-        font-size: 0.95rem;
+        font-size: 0.9rem;
         font-weight: 400;
+        white-space: nowrap;
     }
 
     .btn-logout {
